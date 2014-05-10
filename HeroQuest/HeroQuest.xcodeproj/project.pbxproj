@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		412EAA97191EA7E200982F84 /* QuestListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 412EAA96191EA7E200982F84 /* QuestListViewController.m */; };
+		412EAA9A191EC51900982F84 /* QuestDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 412EAA99191EC51900982F84 /* QuestDetailViewController.m */; };
 		41C5FF5D191E9BCD00AB6772 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 41C5FF5C191E9BCD00AB6772 /* Foundation.framework */; };
 		41C5FF5F191E9BCD00AB6772 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 41C5FF5E191E9BCD00AB6772 /* CoreGraphics.framework */; };
 		41C5FF61191E9BCD00AB6772 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 41C5FF60191E9BCD00AB6772 /* UIKit.framework */; };
@@ -37,6 +38,8 @@
 /* Begin PBXFileReference section */
 		412EAA95191EA7E200982F84 /* QuestListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QuestListViewController.h; sourceTree = "<group>"; };
 		412EAA96191EA7E200982F84 /* QuestListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QuestListViewController.m; sourceTree = "<group>"; };
+		412EAA98191EC51900982F84 /* QuestDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QuestDetailViewController.h; sourceTree = "<group>"; };
+		412EAA99191EC51900982F84 /* QuestDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QuestDetailViewController.m; sourceTree = "<group>"; };
 		41C5FF59191E9BCD00AB6772 /* HeroQuest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HeroQuest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		41C5FF5C191E9BCD00AB6772 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		41C5FF5E191E9BCD00AB6772 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -118,6 +121,8 @@
 				41C5FF6B191E9BCD00AB6772 /* AppDelegate.h */,
 				41C5FF6C191E9BCD00AB6772 /* AppDelegate.m */,
 				41C5FF6E191E9BCD00AB6772 /* Main.storyboard */,
+				412EAA98191EC51900982F84 /* QuestDetailViewController.h */,
+				412EAA99191EC51900982F84 /* QuestDetailViewController.m */,
 				412EAA95191EA7E200982F84 /* QuestListViewController.h */,
 				412EAA96191EA7E200982F84 /* QuestListViewController.m */,
 				41C5FF71191E9BCD00AB6772 /* LoginViewController.h */,
@@ -258,6 +263,7 @@
 				412EAA97191EA7E200982F84 /* QuestListViewController.m in Sources */,
 				41C5FF6D191E9BCD00AB6772 /* AppDelegate.m in Sources */,
 				41C5FF69191E9BCD00AB6772 /* main.m in Sources */,
+				412EAA9A191EC51900982F84 /* QuestDetailViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
