@@ -17,14 +17,17 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+    
 }
 
 -(void)viewWillAppear:(BOOL)animated
 {
-    [self.navigationController setNavigationBarHidden:YES];
+    [self.navigationController setNavigationBarHidden:NO];
+    self.navigationItem.hidesBackButton = YES;
+    self.navigationItem.title = @"Quest List";
     [super viewWillAppear:animated];
 }
+
 
 
 

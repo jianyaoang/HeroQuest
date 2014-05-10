@@ -52,7 +52,7 @@
                         <outlet property="loginButton" destination="i5S-jR-vfy" id="ucK-b4-Ac3"/>
                         <outlet property="passwordTextField" destination="ln4-oo-z4P" id="adC-wX-zs5"/>
                         <outlet property="usernameTextField" destination="yAU-KO-btd" id="fEN-Rl-jiF"/>
-                        <segue destination="BoG-sM-fqa" kind="push" id="htp-Ew-e9N"/>
+                        <segue destination="BoG-sM-fqa" kind="push" identifier="showQuestListViewController" id="htp-Ew-e9N"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
