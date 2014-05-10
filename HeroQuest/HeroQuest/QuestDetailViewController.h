@@ -9,5 +9,8 @@
 #import <UIKit/UIKit.h>
 
 @interface QuestDetailViewController : UIViewController
+@property (strong, nonatomic) IBOutlet UILabel *questName;
+@property (strong, nonatomic) IBOutlet UILabel *questGiver;
+
 
 @end
