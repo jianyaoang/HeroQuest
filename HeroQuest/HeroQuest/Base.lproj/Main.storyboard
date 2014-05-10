@@ -112,7 +112,13 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
-                    <navigationItem key="navigationItem" id="0AZ-vW-OGu"/>
+                    <navigationItem key="navigationItem" id="0AZ-vW-OGu">
+                        <barButtonItem key="rightBarButtonItem" title="Settings" id="cWh-lo-KeZ">
+                            <connections>
+                                <segue destination="aKm-9S-XG4" kind="push" identifier="showSettingsViewController" id="pnc-ng-3Ng"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="questTableView" destination="JED-m0-D6e" id="Uv0-WE-lpq"/>
                     </connections>
@@ -120,6 +126,42 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Fet-ur-Cjj" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1008" y="38"/>
+        </scene>
+        <!--Settings View Controller-->
+        <scene sceneID="uQa-ht-Bkx">
+            <objects>
+                <viewController id="aKm-9S-XG4" customClass="SettingsViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="GqC-xZ-kGs"/>
+                        <viewControllerLayoutGuide type="bottom" id="qgu-oO-Q8P"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="cYE-9A-gGp">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="bordered" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="bND-Y8-fW9">
+                                <rect key="frame" x="20" y="127" width="280" height="29"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <segments>
+                                    <segment title="First"/>
+                                    <segment title="Second"/>
+                                    <segment title="Third"/>
+                                </segments>
+                                <connections>
+                                    <action selector="onQuestSegmentedControlPressed:" destination="aKm-9S-XG4" eventType="valueChanged" id="4Fe-dG-Db1"/>
+                                </connections>
+                            </segmentedControl>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="WWp-mL-9zH"/>
+                    <connections>
+                        <outlet property="questSegmentedControl" destination="bND-Y8-fW9" id="axM-fL-pBY"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="3Po-Gh-w4H" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1500" y="-373"/>
         </scene>
         <!--Quest Detail View Controller-->
         <scene sceneID="nkA-Me-pJk">
@@ -146,13 +188,19 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Htb-u1-g7L">
-                                <rect key="frame" x="20" y="233" width="280" height="270"/>
+                                <rect key="frame" x="20" y="257" width="280" height="270"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Quest Description:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XlY-ff-0id">
+                                <rect key="frame" x="20" y="232" width="180" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
@@ -165,7 +213,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="GPk-ju-50x" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1430" y="38"/>
+            <point key="canvasLocation" x="1500" y="339"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="Ixv-mr-bPf">

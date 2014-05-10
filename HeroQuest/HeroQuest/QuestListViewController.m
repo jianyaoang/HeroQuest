@@ -9,7 +9,7 @@
 #import "QuestListViewController.h"
 #import "QuestDetailViewController.h"
 #import "Quest.h"
-
+#import "SettingsViewController.h"
 @interface QuestListViewController () <UITableViewDataSource, UITableViewDelegate>
 {
     IBOutlet UITableView *questTableView;
@@ -81,6 +81,12 @@
         dvc.quest = quest;
         dvc.navigationItem.title = quest.questName;
     }
+    else if ([segue.identifier isEqualToString:@"showSettingsViewController"])
+    {
+        SettingsViewController *svc  = segue.destinationViewController;
+        svc.navigationItem.title = @"Settings";
+    }
+    
 }
 
 
