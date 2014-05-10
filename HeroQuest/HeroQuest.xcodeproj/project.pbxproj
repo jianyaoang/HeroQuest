@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		412EAA97191EA7E200982F84 /* QuestListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 412EAA96191EA7E200982F84 /* QuestListViewController.m */; };
 		41C5FF5D191E9BCD00AB6772 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 41C5FF5C191E9BCD00AB6772 /* Foundation.framework */; };
 		41C5FF5F191E9BCD00AB6772 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 41C5FF5E191E9BCD00AB6772 /* CoreGraphics.framework */; };
 		41C5FF61191E9BCD00AB6772 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 41C5FF60191E9BCD00AB6772 /* UIKit.framework */; };
@@ -34,6 +35,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		412EAA95191EA7E200982F84 /* QuestListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QuestListViewController.h; sourceTree = "<group>"; };
+		412EAA96191EA7E200982F84 /* QuestListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QuestListViewController.m; sourceTree = "<group>"; };
 		41C5FF59191E9BCD00AB6772 /* HeroQuest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HeroQuest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		41C5FF5C191E9BCD00AB6772 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		41C5FF5E191E9BCD00AB6772 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -115,6 +118,8 @@
 				41C5FF6B191E9BCD00AB6772 /* AppDelegate.h */,
 				41C5FF6C191E9BCD00AB6772 /* AppDelegate.m */,
 				41C5FF6E191E9BCD00AB6772 /* Main.storyboard */,
+				412EAA95191EA7E200982F84 /* QuestListViewController.h */,
+				412EAA96191EA7E200982F84 /* QuestListViewController.m */,
 				41C5FF71191E9BCD00AB6772 /* LoginViewController.h */,
 				41C5FF72191E9BCD00AB6772 /* LoginViewController.m */,
 				41C5FF74191E9BCD00AB6772 /* Images.xcassets */,
@@ -250,6 +255,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				41C5FF73191E9BCD00AB6772 /* LoginViewController.m in Sources */,
+				412EAA97191EA7E200982F84 /* QuestListViewController.m in Sources */,
 				41C5FF6D191E9BCD00AB6772 /* AppDelegate.m in Sources */,
 				41C5FF69191E9BCD00AB6772 /* main.m in Sources */,
 			);
@@ -456,6 +462,7 @@
 				41C5FF8D191E9BCD00AB6772 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		41C5FF8E191E9BCD00AB6772 /* Build configuration list for PBXNativeTarget "HeroQuestTests" */ = {
 			isa = XCConfigurationList;
@@ -464,6 +471,7 @@
 				41C5FF90191E9BCD00AB6772 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
