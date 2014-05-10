@@ -7,10 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
-
+#import "Quest.h"
 @interface QuestDetailViewController : UIViewController
-@property (strong, nonatomic) IBOutlet UILabel *questName;
-@property (strong, nonatomic) IBOutlet UILabel *questGiver;
-
+@property (strong, nonatomic) Quest *quest;
 
 @end

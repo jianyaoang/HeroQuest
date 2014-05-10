@@ -25,10 +25,6 @@
 {
     [super viewDidLoad];
     quests = [NSMutableArray new];
-//    questNames = [NSMutableArray new];
-//    questGivers = [NSMutableArray new];
-//    [self questName];
-//    [self questGiver];
     [self assigningQuestDetails];
 }
 
@@ -45,14 +41,17 @@
     Quest *quest1 = [Quest new];
     quest1.questName = @"Bandits in the Woods";
     quest1.questGiver = @"HotDogg The Bounty Hunter";
+    quest1.questDescription = @"The famed bounty hunter HotDog has requested the aid of a hero in ridding the woods of terrifying bandits who have thus far eluded his capture, as he is actually a dog, and cannot actually grab things more than 6 feet off the ground.";
     
     Quest *quest2 = [Quest new];
     quest2.questName = @"Special Delivery";
     quest2.questGiver = @"Sir Jimmy The Swift";
+    quest2.questDescription = @"Sir Jimmy was once the fastest man in the kingdom, brave as any soldier and wise as a king. Unfortunately, age catches us all in the end, and he has requested that I, his personal scribe, find a hero to deliver a package of particular importance--and protect it with their life.";
     
     Quest *quest3 = [Quest new];
     quest3.questName = @"Filthy Mongrel";
     quest3.questGiver = @"Prince Jack, The Iron Horse";
+    quest3.questDescription = @"That strange dog that everyone is treating like a bounty-hunter must go. By the order of Prince Jack, that smelly, disease ridden mongrel must be removed from our streets by any means necessary. He is disrupting the lives of ordinary citizens, and it's just really weird. Make it gone.";
     
     quests = [NSMutableArray arrayWithObjects:quest1,quest2,quest3, nil];
 }
@@ -71,33 +70,18 @@
     return cell;
 }
 
-//
-//-(void)questName
-//{
-//    NSString *questName1 = @"Bandits in the Woods";
-//    NSString *questName2 = @"Special Delivery";
-//    NSString *questName3 = @"Filthy Mongrel";
-//    questNames = [NSMutableArray arrayWithObjects:questName1, questName2, questName3, nil];
-//}
-//
-//-(void)questGiver
-//{
-//    NSString *questGiver1 = @"HotDogg The Bounty Hunter";
-//    NSString *questGiver2 = @"Sir Jimmy The Swift";
-//    NSString *questGiver3 = @"Prince Jack, The Iron Horse";
-//    questGivers = [NSMutableArray arrayWithObjects:questGiver1, questGiver2, questGiver3, nil];
-//}
-//
-//-(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
-//{
-//    if ([segue.identifier isEqualToString:@"showQuestDetailViewController"])
-//    {
-//        QuestDetailViewController *dvc = segue.destinationViewController;
-//        NSIndexPath *indexPath = [questTableView indexPathForSelectedRow];
-//        dvc.questName.text = [questNames objectAtIndex:indexPath.row];
-//        dvc.questGiver.text = [questGivers objectAtIndex:indexPath.row];
-//    }
-//}
+-(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    if ([segue.identifier isEqualToString:@"showQuestDetailViewController"])
+    {
+        NSIndexPath *indexPath = [questTableView indexPathForCell:sender];
+        Quest *quest = [quests objectAtIndex:indexPath.row];
+        
+        QuestDetailViewController *dvc = segue.destinationViewController;
+        dvc.quest = quest;
+        dvc.navigationItem.title = quest.questName;
+    }
+}
 
 
 
