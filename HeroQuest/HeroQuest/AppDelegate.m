@@ -8,6 +8,7 @@
 
 #import "AppDelegate.h"
 #import "LoginViewController.h"
+#import "QuestListViewController.h"
 
 @implementation AppDelegate
 
@@ -18,8 +19,8 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     UINavigationController *navigationController = (UINavigationController*)self.window.rootViewController;
-    LoginViewController *lvc = navigationController.viewControllers.firstObject;
-    lvc.managedObjectContext = self.managedObjectContext;
+    QuestListViewController *qlvc = navigationController.viewControllers[0];
+    qlvc.managedObjectContext = self.managedObjectContext;
     return YES;
 }
 							

@@ -32,7 +32,7 @@
 {
     [self.navigationController setNavigationBarHidden:NO];
     self.navigationItem.hidesBackButton = YES;
-    self.navigationItem.title = @"Quest List";
+//    self.navigationItem.title = @"Quest List";
     [super viewWillAppear:animated];
 }
 
@@ -80,11 +80,13 @@
         QuestDetailViewController *dvc = segue.destinationViewController;
         dvc.quest = quest;
         dvc.navigationItem.title = quest.questName;
+        dvc.managedObjectContext = self.managedObjectContext;
     }
     else if ([segue.identifier isEqualToString:@"showSettingsViewController"])
     {
         SettingsViewController *svc  = segue.destinationViewController;
-        svc.navigationItem.title = @"Settings";
+        svc.navigationItem.title = @"Quest Settings";
+        svc.managedObjectContext = self.managedObjectContext;
     }
     
 }

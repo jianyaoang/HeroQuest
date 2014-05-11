@@ -8,7 +8,12 @@
 
 #import <UIKit/UIKit.h>
 #import "Quest.h"
-@interface QuestDetailViewController : UIViewController
+
+@interface QuestDetailViewController : UIViewController <NSFetchedResultsControllerDelegate>
+
 @property (strong, nonatomic) Quest *quest;
+
+@property NSManagedObjectContext *managedObjectContext;
+@property NSFetchedResultsController *fetchedResultsController;
 
 @end
