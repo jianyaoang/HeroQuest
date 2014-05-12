@@ -202,7 +202,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="eo9-Ds-xfK">
-                                <rect key="frame" x="20" y="388" width="280" height="160"/>
+                                <rect key="frame" x="0.0" y="375" width="320" height="193"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <connections>
                                     <outlet property="delegate" destination="2tA-fF-peb" id="4ea-3p-1oe"/>

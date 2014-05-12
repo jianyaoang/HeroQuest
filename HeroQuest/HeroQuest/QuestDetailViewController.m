@@ -39,7 +39,7 @@
     questMapView.showsUserLocation = YES;
     
     CLLocationCoordinate2D centerCoordinate = CLLocationCoordinate2DMake(self.quest.QuestGiverLatitude, self.quest.QuestGiverLongitude);
-    MKCoordinateSpan coordinateSpan = MKCoordinateSpanMake(0.01, 0.01);
+    MKCoordinateSpan coordinateSpan = MKCoordinateSpanMake(0.09, 0.09);
     MKCoordinateRegion region = MKCoordinateRegionMake(centerCoordinate, coordinateSpan);
     questMapView.region = region;
     
@@ -47,6 +47,29 @@
     questGiverLocation.coordinate = centerCoordinate;
     questGiverLocation.title = self.quest.questGiver;
     [questMapView addAnnotation:questGiverLocation];
+    
+
+    CLGeocoder *geocoder = [CLGeocoder new];
+    CLLocation *location = [[CLLocation alloc] initWithLatitude:self.quest.locationLatitude longitude:self.quest.locationLongitude];
+    
+    [geocoder reverseGeocodeLocation:location completionHandler:^(NSArray *placemarks, NSError *error)
+    {
+        if (error)
+        {
+            NSLog(@"Connection Error");
+            
+            UIAlertView *av = [[UIAlertView alloc] initWithTitle:@"Unexpected Error" message:@"Unable to detect location" delegate:nil cancelButtonTitle:nil otherButtonTitles:nil];
+            [av show];
+        }
+        
+        for (CLPlacemark *place in placemarks)
+        {
+            MKPointAnnotation *annotation = [MKPointAnnotation new];
+            annotation.coordinate = place.location.coordinate;
+            annotation.title = self.quest.questName;
+            [questMapView addAnnotation:annotation];
+        }
+    }];
 }
 
 

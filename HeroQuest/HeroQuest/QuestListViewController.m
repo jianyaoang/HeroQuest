@@ -53,7 +53,7 @@
     quest2.questDescription = @"Sir Jimmy was once the fastest man in the kingdom, brave as any soldier and wise as a king. Unfortunately, age catches us all in the end, and he has requested that I, his personal scribe, find a hero to deliver a package of particular importance--and protect it with their life.";
     quest2.alignment = @"NEUTRAL";
     quest2.locationLatitude = 46.8657639;
-    quest2.locationLongitude = -967363173;
+    quest2.locationLongitude = -96.7363173;
     quest2.QuestGiverLatitude = 46.8739748;
     quest2.QuestGiverLongitude = -96.806112;
     
