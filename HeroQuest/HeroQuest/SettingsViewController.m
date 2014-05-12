@@ -7,6 +7,7 @@
 //
 
 #import "SettingsViewController.h"
+#import "Quests.h"
 
 @interface SettingsViewController ()
 {
@@ -27,15 +28,16 @@
 {
     if (questSegmentedControl.selectedSegmentIndex  == 0)
     {
-        self.view.backgroundColor = [UIColor blueColor];
+//        self.view.backgroundColor = [UIColor blueColor];
+        
     }
     else if (questSegmentedControl.selectedSegmentIndex == 1)
     {
-        self.view.backgroundColor = [UIColor greenColor];
+//        self.view.backgroundColor = [UIColor greenColor];
     }
     else if (questSegmentedControl.selectedSegmentIndex == 2)
     {
-        self.view.backgroundColor = [UIColor purpleColor];
+//        self.view.backgroundColor = [UIColor purpleColor];
     }
 }
 
