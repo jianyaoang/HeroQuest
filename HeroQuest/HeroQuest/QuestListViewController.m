@@ -102,7 +102,6 @@
         svc.navigationItem.title = @"Quest Settings";
         svc.managedObjectContext = self.managedObjectContext;
     }
-    
 }
 
 
