@@ -7,12 +7,15 @@
 //
 
 #import "QuestDetailViewController.h"
+#import <MapKit/MapKit.h>
 
-@interface QuestDetailViewController ()
+@interface QuestDetailViewController () <MKMapViewDelegate>
 {
+    IBOutlet MKMapView *questMapView;
     IBOutlet UITextView *questDescription;
     IBOutlet UILabel *questName;
     IBOutlet UILabel *questGiver;
+    MKPointAnnotation *questGiverLocation;
 }
 @end
 
@@ -27,6 +30,23 @@
     questGiver.numberOfLines = 0;
     
     questDescription.text = self.quest.questDescription;
+    
+    [self displayingQuestLocationAndQuestGiverOnMap];
+}
+
+-(void)displayingQuestLocationAndQuestGiverOnMap
+{
+    questMapView.showsUserLocation = YES;
+    
+    CLLocationCoordinate2D centerCoordinate = CLLocationCoordinate2DMake(self.quest.QuestGiverLatitude, self.quest.QuestGiverLongitude);
+    MKCoordinateSpan coordinateSpan = MKCoordinateSpanMake(0.01, 0.01);
+    MKCoordinateRegion region = MKCoordinateRegionMake(centerCoordinate, coordinateSpan);
+    questMapView.region = region;
+    
+    questGiverLocation = [MKPointAnnotation new];
+    questGiverLocation.coordinate = centerCoordinate;
+    questGiverLocation.title = self.quest.questGiver;
+    [questMapView addAnnotation:questGiverLocation];
 }
 
 
