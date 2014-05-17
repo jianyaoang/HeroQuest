@@ -9,6 +9,7 @@
 #import "AppDelegate.h"
 #import "LoginViewController.h"
 #import "QuestListViewController.h"
+#import <Parse/Parse.h>
 
 @implementation AppDelegate
 
@@ -21,6 +22,8 @@
     UINavigationController *navigationController = (UINavigationController*)self.window.rootViewController;
     QuestListViewController *qlvc = navigationController.viewControllers[0];
     qlvc.managedObjectContext = self.managedObjectContext;
+    
+    [Parse setApplicationId:@"nyV2iKoWp4ZvHfRj1nOeQElDRjZLcmXKviq0LQKB" clientKey:@"V59gduRqnzJZdT90F9rItnPY4kEoaNPScrQxWPc1"];
     return YES;
 }
 							

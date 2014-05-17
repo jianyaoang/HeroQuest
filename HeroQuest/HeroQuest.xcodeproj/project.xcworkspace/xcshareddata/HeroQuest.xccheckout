@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>F3720CD7-7312-4DC6-B370-97676863DD9B</string>
+	<key>IDESourceControlProjectName</key>
+	<string>HeroQuest</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>F4716FE6-642F-4E31-B121-A471B6F14D84</key>
+		<string>https://github.com/jianyaoang/HeroQuest.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>HeroQuest/HeroQuest.xcodeproj/project.xcworkspace</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>F4716FE6-642F-4E31-B121-A471B6F14D84</key>
+		<string>../../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://github.com/jianyaoang/HeroQuest.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>110</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>F4716FE6-642F-4E31-B121-A471B6F14D84</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>F4716FE6-642F-4E31-B121-A471B6F14D84</string>
+			<key>IDESourceControlWCCName</key>
+			<string>MyriadMobile</string>
+		</dict>
+	</array>
+</dict>
+</plist>
