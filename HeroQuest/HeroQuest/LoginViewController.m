@@ -8,6 +8,7 @@
 
 #import "LoginViewController.h"
 #import "QuestListViewController.h"
+#import <Parse/Parse.h>
 @interface LoginViewController () <UITextFieldDelegate>
 {
     IBOutlet UIButton *loginButton;
@@ -29,15 +30,31 @@
 
 - (IBAction)onLoginButtonPressed:(UIButton*)sender
 {
-    if ([usernameTextField.text isEqualToString:@"Lancelot"] && [passwordTextField.text isEqualToString:@"arthurDoesntKnow"])
+    PFUser *user = [PFUser new];
+    user.username = usernameTextField.text;
+    user.password = passwordTextField.text;
+    
+    [user saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error)
     {
-        [self performSegueWithIdentifier:@"showQuestList" sender:sender];
-    }
-    else
-    {
-        UIAlertView *av = [[UIAlertView alloc] initWithTitle:@"Login Error" message:@"Please check username and password" delegate:nil cancelButtonTitle:@"Okay" otherButtonTitles:nil];
-        [av show];
-    }
+        if (!error)
+        {
+            [self performSegueWithIdentifier:@"showQuestList" sender:sender];
+        }
+        else
+        {
+            UIAlertView *av = [[UIAlertView alloc] initWithTitle:@"Login Error" message:@"Please check username and password" delegate:nil cancelButtonTitle:@"Okay" otherButtonTitles:nil];
+            [av show];
+        }
+    }];
+//    if ([usernameTextField.text isEqualToString:@"Lancelot"] && [passwordTextField.text isEqualToString:@"arthurDoesntKnow"])
+//    {
+//        [self performSegueWithIdentifier:@"showQuestList" sender:sender];
+//    }
+//    else
+//    {
+//        UIAlertView *av = [[UIAlertView alloc] initWithTitle:@"Login Error" message:@"Please check username and password" delegate:nil cancelButtonTitle:@"Okay" otherButtonTitles:nil];
+//        [av show];
+//    }
     [usernameTextField resignFirstResponder];
     [passwordTextField resignFirstResponder];
 }

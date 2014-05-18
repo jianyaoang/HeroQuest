@@ -23,6 +23,7 @@
 		412EAA9A191EC51900982F84 /* QuestDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 412EAA99191EC51900982F84 /* QuestDetailViewController.m */; };
 		412EAA9D191ECF7D00982F84 /* Quest.m in Sources */ = {isa = PBXBuildFile; fileRef = 412EAA9C191ECF7D00982F84 /* Quest.m */; };
 		412EAAA1191EDE8300982F84 /* SettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 412EAAA0191EDE8300982F84 /* SettingsViewController.m */; };
+		4171F8011928F31A00682E45 /* SignUpViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4171F8001928F31A00682E45 /* SignUpViewController.m */; };
 		41816EAC1921324700768E03 /* Quests.m in Sources */ = {isa = PBXBuildFile; fileRef = 41816EAB1921324700768E03 /* Quests.m */; };
 		41816EAE1921452D00768E03 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 41816EAD1921452D00768E03 /* MapKit.framework */; };
 		41816EB01921453800768E03 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 41816EAF1921453800768E03 /* CoreLocation.framework */; };
@@ -75,6 +76,8 @@
 		412EAA9C191ECF7D00982F84 /* Quest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Quest.m; sourceTree = "<group>"; };
 		412EAA9F191EDE8300982F84 /* SettingsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingsViewController.h; sourceTree = "<group>"; };
 		412EAAA0191EDE8300982F84 /* SettingsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingsViewController.m; sourceTree = "<group>"; };
+		4171F7FF1928F31A00682E45 /* SignUpViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SignUpViewController.h; sourceTree = "<group>"; };
+		4171F8001928F31A00682E45 /* SignUpViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SignUpViewController.m; sourceTree = "<group>"; };
 		41816EAA1921324700768E03 /* Quests.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Quests.h; sourceTree = "<group>"; };
 		41816EAB1921324700768E03 /* Quests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Quests.m; sourceTree = "<group>"; };
 		41816EAD1921452D00768E03 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
@@ -150,6 +153,8 @@
 				412EAA99191EC51900982F84 /* QuestDetailViewController.m */,
 				412EAA95191EA7E200982F84 /* QuestListViewController.h */,
 				412EAA96191EA7E200982F84 /* QuestListViewController.m */,
+				4171F7FF1928F31A00682E45 /* SignUpViewController.h */,
+				4171F8001928F31A00682E45 /* SignUpViewController.m */,
 				41C5FF71191E9BCD00AB6772 /* LoginViewController.h */,
 				41C5FF72191E9BCD00AB6772 /* LoginViewController.m */,
 			);
@@ -351,6 +356,7 @@
 				41816EAC1921324700768E03 /* Quests.m in Sources */,
 				41B46C9F191FF3ED0011D6CB /* Model.xcdatamodeld in Sources */,
 				41C5FF6D191E9BCD00AB6772 /* AppDelegate.m in Sources */,
+				4171F8011928F31A00682E45 /* SignUpViewController.m in Sources */,
 				41C5FF69191E9BCD00AB6772 /* main.m in Sources */,
 				412EAA9A191EC51900982F84 /* QuestDetailViewController.m in Sources */,
 				412EAAA1191EDE8300982F84 /* SettingsViewController.m in Sources */,
