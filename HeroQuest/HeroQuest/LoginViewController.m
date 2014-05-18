@@ -30,22 +30,46 @@
 
 - (IBAction)onLoginButtonPressed:(UIButton*)sender
 {
-    PFUser *user = [PFUser new];
-    user.username = usernameTextField.text;
-    user.password = passwordTextField.text;
+    NSString *username = [usernameTextField.text stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
     
-    [user saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error)
+    NSString *password = [passwordTextField.text stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
+    
+    if (username.length == 0 || password.length == 0)
     {
-        if (!error)
+        UIAlertView *av = [[UIAlertView alloc] initWithTitle:@"Login Error" message:@"Please check username and password field" delegate:nil cancelButtonTitle:@"Okay" otherButtonTitles: nil];
+        [av show];
+    }
+    else
+    {
+        [PFUser logInWithUsernameInBackground:username password:password block:^(PFUser *user, NSError *error)
         {
-            [self performSegueWithIdentifier:@"showQuestList" sender:sender];
-        }
-        else
-        {
-            UIAlertView *av = [[UIAlertView alloc] initWithTitle:@"Login Error" message:@"Please check username and password" delegate:nil cancelButtonTitle:@"Okay" otherButtonTitles:nil];
-            [av show];
-        }
-    }];
+            if (!error)
+            {
+                [self performSegueWithIdentifier:@"showQuestList" sender:sender];
+            }
+            else
+            {
+                UIAlertView *av = [[UIAlertView alloc] initWithTitle:@"Login Error" message:@"Please cehck username and password field" delegate:nil cancelButtonTitle:@"Okay" otherButtonTitles: nil];
+                [av show];
+            }
+        }];
+    }
+//    PFUser *user = [PFUser new];
+//    user.username = usernameTextField.text;
+//    user.password = passwordTextField.text;
+//    
+//    [user saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error)
+//    {
+//        if (!error)
+//        {
+//            [self performSegueWithIdentifier:@"showQuestList" sender:sender];
+//        }
+//        else
+//        {
+//            UIAlertView *av = [[UIAlertView alloc] initWithTitle:@"Login Error" message:@"Please check username and password" delegate:nil cancelButtonTitle:@"Okay" otherButtonTitles:nil];
+//            [av show];
+//        }
+//    }];
 //    if ([usernameTextField.text isEqualToString:@"Lancelot"] && [passwordTextField.text isEqualToString:@"arthurDoesntKnow"])
 //    {
 //        [self performSegueWithIdentifier:@"showQuestList" sender:sender];

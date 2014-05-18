@@ -34,23 +34,34 @@
 
 - (IBAction)onSignUpButtonPressed:(UIButton*)sender
 {
-    PFUser *user = [PFUser new];
-    user.username = usernameTextField.text;
-    user.password = passwordTextField.text;
-    user[@"name"] = nameTextField.text;
+    NSString *username = [usernameTextField.text stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
+    NSString *password = [passwordTextField.text stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
+    NSString *name = [nameTextField.text stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
     
-    [user signUpInBackgroundWithBlock:^(BOOL succeeded, NSError *error)
+    if (username.length == 0 || password.length == 0 || name.length == 0)
     {
-        if (!error)
-        {
-            [self performSegueWithIdentifier:@"showQuestListView" sender:sender];
-        }
-        else
-        {
-            UIAlertView *av = [[UIAlertView alloc] initWithTitle:@"Sign Up Error" message:@"Please check fields entered" delegate:nil cancelButtonTitle:@"Okay" otherButtonTitles:nil];
-            [av show];
-        }
-    }];
+        UIAlertView *av = [[UIAlertView alloc] initWithTitle:@"Sign Up Error" message:@"Please check username, password, and name field" delegate:nil cancelButtonTitle:@"Okay" otherButtonTitles: nil];
+        [av show];
+    }
+    else
+    {
+        PFUser *newUser = [PFUser user];
+        newUser.username = username;
+        newUser.password = password;
+        newUser[@"name"] = name;
+        
+        [newUser signUpInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
+            if (!error)
+            {
+                [self performSegueWithIdentifier:@"showQuestListView" sender:sender];
+            }
+            else
+            {
+                UIAlertView *av = [[UIAlertView alloc] initWithTitle:@"Sign Up Error" message:@"Please check username, password, and name field" delegate:nil cancelButtonTitle:@"Okay" otherButtonTitles: nil];
+                [av show];
+            }
+        }];
+    }
     
     [nameTextField resignFirstResponder];
     [usernameTextField resignFirstResponder];
