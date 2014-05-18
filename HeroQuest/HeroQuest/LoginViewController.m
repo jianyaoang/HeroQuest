@@ -59,6 +59,13 @@
     [passwordTextField resignFirstResponder];
 }
 
+- (IBAction)onSignUpButtonPressed:(UIButton*)sender
+{
+    [self performSegueWithIdentifier:@"showSignUpView" sender:sender];
+}
+
+
+
 -(void)textFieldDidBeginEditing:(UITextField *)textField
 {
     usernameTextField.placeholder = @"";

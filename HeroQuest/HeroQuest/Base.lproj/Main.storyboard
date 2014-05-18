@@ -35,7 +35,7 @@
                                 </connections>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="i5S-jR-vfy">
-                                <rect key="frame" x="80" y="211" width="160" height="30"/>
+                                <rect key="frame" x="80" y="206" width="160" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Login">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
@@ -45,11 +45,14 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dP4-U0-la0">
-                                <rect key="frame" x="133" y="244" width="55" height="30"/>
+                                <rect key="frame" x="80" y="239" width="160" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Sign Up">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="onSignUpButtonPressed:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="DTH-UA-l6g"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
@@ -60,11 +63,12 @@
                         <outlet property="passwordTextField" destination="ln4-oo-z4P" id="adC-wX-zs5"/>
                         <outlet property="usernameTextField" destination="yAU-KO-btd" id="fEN-Rl-jiF"/>
                         <segue destination="BoG-sM-fqa" kind="push" identifier="showQuestList" id="LTt-8f-hY5"/>
+                        <segue destination="upA-2S-6VP" kind="push" identifier="showSignUpView" id="amH-aT-Hi5"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="604" y="38"/>
+            <point key="canvasLocation" x="596" y="9"/>
         </scene>
         <!--Sign Up View Controller-->
         <scene sceneID="eSE-bb-jcq">
@@ -79,10 +83,11 @@
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
+                    <navigationItem key="navigationItem" id="fSm-QJ-YfS"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="I65-pN-t5N" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="740" y="724"/>
+            <point key="canvasLocation" x="907" y="748"/>
         </scene>
         <!--Quest List View Controller-->
         <scene sceneID="tza-jg-ROV">
