@@ -7,43 +7,72 @@
 //
 
 #import "SignUpViewController.h"
+#import <Parse/Parse.h>
+#import "QuestListViewController.h"
 
-@interface SignUpViewController ()
+@interface SignUpViewController () <UITextFieldDelegate>
+{
+    IBOutlet UITextField *nameTextField;
+    IBOutlet UITextField *usernameTextField;
+    IBOutlet UITextField *passwordTextField;
+}
 
 @end
 
 @implementation SignUpViewController
 
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
-{
-    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
-    if (self) {
-        // Custom initialization
-    }
-    return self;
-}
-
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+    [self.view endEditing:YES];
+    
+    usernameTextField.delegate = self;
+    passwordTextField.delegate = self;
+    nameTextField.delegate     = self;
+
 }
 
-- (void)didReceiveMemoryWarning
+- (IBAction)onSignUpButtonPressed:(UIButton*)sender
 {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+    PFUser *user = [PFUser new];
+    user.username = usernameTextField.text;
+    user.password = passwordTextField.text;
+    user[@"name"] = nameTextField.text;
+    
+    [user signUpInBackgroundWithBlock:^(BOOL succeeded, NSError *error)
+    {
+        if (!error)
+        {
+            [self performSegueWithIdentifier:@"showQuestListView" sender:sender];
+        }
+        else
+        {
+            UIAlertView *av = [[UIAlertView alloc] initWithTitle:@"Sign Up Error" message:@"Please check fields entered" delegate:nil cancelButtonTitle:@"Okay" otherButtonTitles:nil];
+            [av show];
+        }
+    }];
+    
+    [nameTextField resignFirstResponder];
+    [usernameTextField resignFirstResponder];
+    [passwordTextField resignFirstResponder];
 }
 
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+-(void)textFieldDidBeginEditing:(UITextField *)textField
 {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+    usernameTextField.placeholder = @"";
+    passwordTextField.placeholder = @"";
+    passwordTextField.secureTextEntry = YES;
 }
-*/
+
+-(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    QuestListViewController *qlvc = segue.destinationViewController;
+    qlvc.navigationItem.title = @"Quest List";
+}
+
+
+
+
+
 
 @end
