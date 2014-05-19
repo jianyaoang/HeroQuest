@@ -29,7 +29,7 @@
 		41816EB01921453800768E03 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 41816EAF1921453800768E03 /* CoreLocation.framework */; };
 		41B46C9C191FF1990011D6CB /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 41B46C9B191FF1990011D6CB /* CoreData.framework */; };
 		41B46C9F191FF3ED0011D6CB /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 41B46C9D191FF3ED0011D6CB /* Model.xcdatamodeld */; };
-		41C34BAB192A6AA000BEFE92 /* FacebookSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 41C34BAA192A6AA000BEFE92 /* FacebookSDK.framework */; };
+		41BB1960192A7B0C009D0E97 /* FacebookSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 41BB195F192A7B0C009D0E97 /* FacebookSDK.framework */; };
 		41C5FF5D191E9BCD00AB6772 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 41C5FF5C191E9BCD00AB6772 /* Foundation.framework */; };
 		41C5FF5F191E9BCD00AB6772 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 41C5FF5E191E9BCD00AB6772 /* CoreGraphics.framework */; };
 		41C5FF61191E9BCD00AB6772 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 41C5FF60191E9BCD00AB6772 /* UIKit.framework */; };
@@ -85,7 +85,7 @@
 		41816EAF1921453800768E03 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		41B46C9B191FF1990011D6CB /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		41B46C9E191FF3ED0011D6CB /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
-		41C34BAA192A6AA000BEFE92 /* FacebookSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FacebookSDK.framework; path = ../../../Documents/FacebookSDK/FacebookSDK.framework; sourceTree = "<group>"; };
+		41BB195F192A7B0C009D0E97 /* FacebookSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FacebookSDK.framework; path = ../../../Documents/FacebookSDK/FacebookSDK.framework; sourceTree = "<group>"; };
 		41C5FF59191E9BCD00AB6772 /* HeroQuest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HeroQuest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		41C5FF5C191E9BCD00AB6772 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		41C5FF5E191E9BCD00AB6772 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -113,7 +113,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				41240A821927E5AE00B2B809 /* Twitter.framework in Frameworks */,
-				41C34BAB192A6AA000BEFE92 /* FacebookSDK.framework in Frameworks */,
+				41BB1960192A7B0C009D0E97 /* FacebookSDK.framework in Frameworks */,
 				41240A801927E5A900B2B809 /* Accounts.framework in Frameworks */,
 				41240A7E1927E59F00B2B809 /* Social.framework in Frameworks */,
 				41240A7C1927E4A400B2B809 /* SystemConfiguration.framework in Frameworks */,
@@ -186,7 +186,7 @@
 		41C5FF5B191E9BCD00AB6772 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				41C34BAA192A6AA000BEFE92 /* FacebookSDK.framework */,
+				41BB195F192A7B0C009D0E97 /* FacebookSDK.framework */,
 				41240A811927E5AE00B2B809 /* Twitter.framework */,
 				41240A7F1927E5A900B2B809 /* Accounts.framework */,
 				41240A7D1927E59F00B2B809 /* Social.framework */,

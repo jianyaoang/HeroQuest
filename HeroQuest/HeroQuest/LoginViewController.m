@@ -60,6 +60,38 @@
     [passwordTextField resignFirstResponder];
 }
 
+- (IBAction)onFacebookSignUpButtonPressed:(id)sender
+{
+    NSArray *permissionArray = @[@"user_about_me",@"user_relationships", @"user_birthday", @"user_location"];
+    
+    [PFFacebookUtils logInWithPermissions:permissionArray block:^(PFUser *user, NSError *error) {
+        
+        if (!user)
+        {
+            if (!error)
+            {
+                NSLog(@"The user cancelled FB login");
+            }
+            else
+            {
+                NSLog(@"An error has occured: %@", error);
+            }
+        }
+        else if (user.isNew)
+        {
+            NSLog(@"User with facebook signed up and logged in!");
+//            [self.navigationController pushViewController:vc animated:YES];
+            [self performSegueWithIdentifier:@"showQuestList" sender:sender];
+        }
+        else
+        {
+            NSLog(@"User with facebook logged in!");
+            [self performSegueWithIdentifier:@"showQuestList" sender:sender];
+//            [self.navigationController pushViewController:vc animated:YES];
+        }
+    }];
+}
+
 - (IBAction)onSignUpButtonPressed:(UIButton*)sender
 {
     [self performSegueWithIdentifier:@"showSignUpView" sender:sender];

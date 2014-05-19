@@ -32,6 +32,19 @@
 	<array>
 		<string>armv7</string>
 	</array>
+	<key>FacebookAppID</key>
+	<string>404042113072355</string>
+	<key>FacebookDisplayName</key>
+	<string>HeroQuest</string>
+	<key>CFBundleURLTypes</key>
+	<array>
+		<dict>
+			<key>CFBundleURLSchemes</key>
+			<array>
+				<string>fb404042113072355</string>
+			</array>
+		</dict>
+	</array>
 	<key>UISupportedInterfaceOrientations</key>
 	<array>
 		<string>UIInterfaceOrientationPortrait</string>
