@@ -23,6 +23,8 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    [PFFacebookUtils initializeFacebook];
+    
     usernameTextField.delegate = self;
     passwordTextField.delegate = self;
     [self.navigationController setNavigationBarHidden:YES];
@@ -61,11 +63,6 @@
 - (IBAction)onSignUpButtonPressed:(UIButton*)sender
 {
     [self performSegueWithIdentifier:@"showSignUpView" sender:sender];
-}
-
-- (IBAction)onSignUpWithFacebookButtonPressed:(id)sender
-{
-    
 }
 
 -(void)textFieldDidBeginEditing:(UITextField *)textField
