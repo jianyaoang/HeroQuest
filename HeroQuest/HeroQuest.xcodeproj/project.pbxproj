@@ -24,11 +24,9 @@
 		412EAA9D191ECF7D00982F84 /* Quest.m in Sources */ = {isa = PBXBuildFile; fileRef = 412EAA9C191ECF7D00982F84 /* Quest.m */; };
 		412EAAA1191EDE8300982F84 /* SettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 412EAAA0191EDE8300982F84 /* SettingsViewController.m */; };
 		4171F8011928F31A00682E45 /* SignUpViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4171F8001928F31A00682E45 /* SignUpViewController.m */; };
-		41816EAC1921324700768E03 /* Quests.m in Sources */ = {isa = PBXBuildFile; fileRef = 41816EAB1921324700768E03 /* Quests.m */; };
 		41816EAE1921452D00768E03 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 41816EAD1921452D00768E03 /* MapKit.framework */; };
 		41816EB01921453800768E03 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 41816EAF1921453800768E03 /* CoreLocation.framework */; };
 		41B46C9C191FF1990011D6CB /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 41B46C9B191FF1990011D6CB /* CoreData.framework */; };
-		41B46C9F191FF3ED0011D6CB /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 41B46C9D191FF3ED0011D6CB /* Model.xcdatamodeld */; };
 		41BB1960192A7B0C009D0E97 /* FacebookSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 41BB195F192A7B0C009D0E97 /* FacebookSDK.framework */; };
 		41C5FF5D191E9BCD00AB6772 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 41C5FF5C191E9BCD00AB6772 /* Foundation.framework */; };
 		41C5FF5F191E9BCD00AB6772 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 41C5FF5E191E9BCD00AB6772 /* CoreGraphics.framework */; };
@@ -79,12 +77,9 @@
 		412EAAA0191EDE8300982F84 /* SettingsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingsViewController.m; sourceTree = "<group>"; };
 		4171F7FF1928F31A00682E45 /* SignUpViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SignUpViewController.h; sourceTree = "<group>"; };
 		4171F8001928F31A00682E45 /* SignUpViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SignUpViewController.m; sourceTree = "<group>"; };
-		41816EAA1921324700768E03 /* Quests.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Quests.h; sourceTree = "<group>"; };
-		41816EAB1921324700768E03 /* Quests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Quests.m; sourceTree = "<group>"; };
 		41816EAD1921452D00768E03 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		41816EAF1921453800768E03 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		41B46C9B191FF1990011D6CB /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
-		41B46C9E191FF3ED0011D6CB /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
 		41BB195F192A7B0C009D0E97 /* FacebookSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FacebookSDK.framework; path = ../../../Documents/FacebookSDK/FacebookSDK.framework; sourceTree = "<group>"; };
 		41C5FF59191E9BCD00AB6772 /* HeroQuest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HeroQuest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		41C5FF5C191E9BCD00AB6772 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -231,9 +226,6 @@
 				41C5FF64191E9BCD00AB6772 /* HeroQuest-Info.plist */,
 				41C5FF65191E9BCD00AB6772 /* InfoPlist.strings */,
 				41C5FF68191E9BCD00AB6772 /* main.m */,
-				41B46C9D191FF3ED0011D6CB /* Model.xcdatamodeld */,
-				41816EAA1921324700768E03 /* Quests.h */,
-				41816EAB1921324700768E03 /* Quests.m */,
 				41C5FF6A191E9BCD00AB6772 /* HeroQuest-Prefix.pch */,
 			);
 			name = "Supporting Files";
@@ -357,8 +349,6 @@
 				412EAA9D191ECF7D00982F84 /* Quest.m in Sources */,
 				41C5FF73191E9BCD00AB6772 /* LoginViewController.m in Sources */,
 				412EAA97191EA7E200982F84 /* QuestListViewController.m in Sources */,
-				41816EAC1921324700768E03 /* Quests.m in Sources */,
-				41B46C9F191FF3ED0011D6CB /* Model.xcdatamodeld in Sources */,
 				41C5FF6D191E9BCD00AB6772 /* AppDelegate.m in Sources */,
 				4171F8011928F31A00682E45 /* SignUpViewController.m in Sources */,
 				41C5FF69191E9BCD00AB6772 /* main.m in Sources */,
@@ -590,19 +580,6 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
-
-/* Begin XCVersionGroup section */
-		41B46C9D191FF3ED0011D6CB /* Model.xcdatamodeld */ = {
-			isa = XCVersionGroup;
-			children = (
-				41B46C9E191FF3ED0011D6CB /* Model.xcdatamodel */,
-			);
-			currentVersion = 41B46C9E191FF3ED0011D6CB /* Model.xcdatamodel */;
-			path = Model.xcdatamodeld;
-			sourceTree = "<group>";
-			versionGroupType = wrapper.xcdatamodel;
-		};
-/* End XCVersionGroup section */
 	};
 	rootObject = 41C5FF51191E9BCC00AB6772 /* Project object */;
 }

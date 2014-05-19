@@ -22,8 +22,6 @@
 	<string>????</string>
 	<key>CFBundleVersion</key>
 	<string>1.0</string>
-	<key>LSApplicationCategoryType</key>
-	<string></string>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
 	<key>UIMainStoryboardFile</key>
@@ -33,7 +31,7 @@
 		<string>armv7</string>
 	</array>
 	<key>FacebookAppID</key>
-	<string>404042113072355</string>
+	<string>740607445961659</string>
 	<key>FacebookDisplayName</key>
 	<string>HeroQuest</string>
 	<key>CFBundleURLTypes</key>
@@ -41,7 +39,7 @@
 		<dict>
 			<key>CFBundleURLSchemes</key>
 			<array>
-				<string>fb404042113072355</string>
+				<string>fb740607445961659</string>
 			</array>
 		</dict>
 	</array>

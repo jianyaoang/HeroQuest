@@ -7,7 +7,7 @@
 //
 
 #import "SettingsViewController.h"
-#import "Quests.h"
+//#import "Quests.h"
 
 @interface SettingsViewController ()
 {

@@ -94,13 +94,13 @@
         QuestDetailViewController *dvc = segue.destinationViewController;
         dvc.quest = quest;
         dvc.navigationItem.title = quest.questName;
-        dvc.managedObjectContext = self.managedObjectContext;
+//        dvc.managedObjectContext = self.managedObjectContext;
     }
     else if ([segue.identifier isEqualToString:@"showSettingsViewController"])
     {
         SettingsViewController *svc  = segue.destinationViewController;
         svc.navigationItem.title = @"Quest Settings";
-        svc.managedObjectContext = self.managedObjectContext;
+//        svc.managedObjectContext = self.managedObjectContext;
     }
 }
 

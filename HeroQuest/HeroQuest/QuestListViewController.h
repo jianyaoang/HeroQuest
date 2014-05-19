@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface QuestListViewController : UIViewController <NSFetchedResultsControllerDelegate>
-@property NSManagedObjectContext *managedObjectContext;
-@property NSFetchedResultsController *fetchedResultsController;
+@interface QuestListViewController : UIViewController //<NSFetchedResultsControllerDelegate>
+//@property NSManagedObjectContext *managedObjectContext;
+//@property NSFetchedResultsController *fetchedResultsController;
 @end

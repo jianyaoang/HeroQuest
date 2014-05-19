@@ -127,7 +127,7 @@
     if ([segue.identifier isEqualToString:@"showQuestList"])
     {
         QuestListViewController *qlvc = segue.destinationViewController;
-        qlvc.managedObjectContext = self.managedObjectContext;
+//        qlvc.managedObjectContext = self.managedObjectContext;
         qlvc.navigationItem.title = @"Quest List";
     }
 }

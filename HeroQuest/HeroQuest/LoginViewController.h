@@ -9,5 +9,5 @@
 #import <UIKit/UIKit.h>
 
 @interface LoginViewController : UIViewController
-@property NSManagedObjectContext *managedObjectContext;
+//@property NSManagedObjectContext *managedObjectContext;
 @end
