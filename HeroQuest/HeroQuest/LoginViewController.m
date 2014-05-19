@@ -63,6 +63,11 @@
     [self performSegueWithIdentifier:@"showSignUpView" sender:sender];
 }
 
+- (IBAction)onSignUpWithFacebookButtonPressed:(id)sender
+{
+    
+}
+
 -(void)textFieldDidBeginEditing:(UITextField *)textField
 {
     usernameTextField.placeholder = @"";
