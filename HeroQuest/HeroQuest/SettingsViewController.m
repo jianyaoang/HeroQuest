@@ -29,15 +29,17 @@
     if (questSegmentedControl.selectedSegmentIndex  == 0)
     {
 //        self.view.backgroundColor = [UIColor blueColor];
-        
+        [[NSNotificationCenter defaultCenter] postNotificationName:@"ChangeMe" object:self];
     }
     else if (questSegmentedControl.selectedSegmentIndex == 1)
     {
 //        self.view.backgroundColor = [UIColor greenColor];
+        [[NSNotificationCenter defaultCenter] postNotificationName:@"ChangeColor" object:self];
     }
     else if (questSegmentedControl.selectedSegmentIndex == 2)
     {
 //        self.view.backgroundColor = [UIColor purpleColor];
+        [[NSNotificationCenter defaultCenter] postNotificationName:@"ChangeYou" object:self];
     }
 }
 

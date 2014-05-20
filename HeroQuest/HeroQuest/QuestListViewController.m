@@ -26,6 +26,16 @@
     [super viewDidLoad];
     quests = [NSMutableArray new];
     [self assigningQuestDetails];
+    
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(handleNotification:) name:@"ChangeColor" object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(handleNotification:) name:@"ChangeMe" object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(handleNotification:) name:@"ChangeYou" object:nil];
+}
+
+-(void)handleNotification:(NSNotification*)notification
+{
+    NSLog(@"I got notified");
+    self.view.backgroundColor = [UIColor blackColor];
 }
 
 -(void)viewWillAppear:(BOOL)animated
