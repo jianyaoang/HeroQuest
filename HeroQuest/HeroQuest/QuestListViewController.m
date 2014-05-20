@@ -29,15 +29,30 @@
     quests = [NSMutableArray new];
     [self assigningQuestDetails];
     
-    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(handleNotification:) name:@"FilterArray" object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(handleNotificationEvil:) name:@"FilterArrayEvil" object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(handleNotificationGood:) name:@"FilterArrayGood" object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(handleNotificationNeutral:) name:@"FilterArrayNeutral" object:nil];
 }
 
--(void)handleNotification:(NSNotification*)notification
+-(void)handleNotificationEvil:(NSNotification*)notification
 {
-    NSLog(@"I got notified");
-    self.view.backgroundColor = [UIColor blackColor];
-    
     NSPredicate *filterArray = [NSPredicate predicateWithFormat:@"%K = %@", @"alignment",@"EVIL"];
+    NSLog(@"alignment : %@", [quests filteredArrayUsingPredicate:filterArray]);
+    filteredArray = [quests filteredArrayUsingPredicate:filterArray];
+    [questTableView reloadData];
+}
+
+-(void)handleNotificationGood:(NSNotification*)notification
+{
+    NSPredicate *filterArray = [NSPredicate predicateWithFormat:@"%K = %@", @"alignment",@"GOOD"];
+    NSLog(@"alignment : %@", [quests filteredArrayUsingPredicate:filterArray]);
+    filteredArray = [quests filteredArrayUsingPredicate:filterArray];
+    [questTableView reloadData];
+}
+
+-(void)handleNotificationNeutral:(NSNotification*)notification
+{
+    NSPredicate *filterArray = [NSPredicate predicateWithFormat:@"%K = %@", @"alignment",@"NEUTRAL"];
     NSLog(@"alignment : %@", [quests filteredArrayUsingPredicate:filterArray]);
     filteredArray = [quests filteredArrayUsingPredicate:filterArray];
     [questTableView reloadData];

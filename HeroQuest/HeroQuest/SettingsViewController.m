@@ -28,15 +28,15 @@
 {
     if (questSegmentedControl.selectedSegmentIndex  == 0) //Good
     {
-        [[NSNotificationCenter defaultCenter] postNotificationName:@"FilterArray" object:self];
+        [[NSNotificationCenter defaultCenter] postNotificationName:@"FilterArrayGood" object:self];
     }
     else if (questSegmentedControl.selectedSegmentIndex == 1) //Neutral
     {
-        [[NSNotificationCenter defaultCenter] postNotificationName:@"FilterArray" object:self];
+        [[NSNotificationCenter defaultCenter] postNotificationName:@"FilterArrayNeutral" object:self];
     }
     else if (questSegmentedControl.selectedSegmentIndex == 2) //Evil
     {
-        [[NSNotificationCenter defaultCenter] postNotificationName:@"FilterArray" object:self];
+        [[NSNotificationCenter defaultCenter] postNotificationName:@"FilterArrayEvil" object:self];
     }
 }
 
