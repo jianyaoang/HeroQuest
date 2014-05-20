@@ -36,6 +36,8 @@
 
 -(void)displayingQuestLocationAndQuestGiverOnMap
 {
+    [[UIApplication sharedApplication] setNetworkActivityIndicatorVisible:YES];
+    
     questMapView.showsUserLocation = YES;
     
     CLLocationCoordinate2D centerCoordinate = CLLocationCoordinate2DMake(self.quest.QuestGiverLatitude, self.quest.QuestGiverLongitude);
@@ -58,7 +60,7 @@
         {
             NSLog(@"Connection Error");
             
-            UIAlertView *av = [[UIAlertView alloc] initWithTitle:@"Unexpected Error" message:@"Unable to detect location" delegate:nil cancelButtonTitle:nil otherButtonTitles:nil];
+            UIAlertView *av = [[UIAlertView alloc] initWithTitle:@"Unexpected Error" message:@"Unable to detect location" delegate:nil cancelButtonTitle:@"Okay" otherButtonTitles:nil];
             [av show];
         }
         
@@ -69,6 +71,8 @@
             annotation.title = self.quest.questName;
             [questMapView addAnnotation:annotation];
         }
+        
+        [[UIApplication sharedApplication] setNetworkActivityIndicatorVisible:NO];
     }];
 }
 
