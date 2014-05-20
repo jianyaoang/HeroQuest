@@ -16,6 +16,7 @@
     NSMutableArray *questNames;
     NSMutableArray *questGivers;
     NSMutableArray *quests;
+    NSArray *filteredArray;
 }
 @end
 
@@ -24,18 +25,22 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    filteredArray = [NSArray new];
     quests = [NSMutableArray new];
     [self assigningQuestDetails];
     
-    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(handleNotification:) name:@"ChangeColor" object:nil];
-//    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(handleNotification:) name:@"ChangeMe" object:nil];
-//    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(handleNotification:) name:@"ChangeYou" object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(handleNotification:) name:@"FilterArray" object:nil];
 }
 
 -(void)handleNotification:(NSNotification*)notification
 {
     NSLog(@"I got notified");
     self.view.backgroundColor = [UIColor blackColor];
+    
+    NSPredicate *filterArray = [NSPredicate predicateWithFormat:@"%K = %@", @"alignment",@"EVIL"];
+    NSLog(@"alignment : %@", [quests filteredArrayUsingPredicate:filterArray]);
+    filteredArray = [quests filteredArrayUsingPredicate:filterArray];
+    [questTableView reloadData];
 }
 
 -(void)viewWillAppear:(BOOL)animated
@@ -82,12 +87,32 @@
 
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return quests.count;
+//    return quests.count;
+//    return filteredArray.count;
+    if ([filteredArray count] == 0)
+    {
+        return quests.count;
+    }
+    else
+    {
+        return filteredArray.count;
+    }
 }
 
 -(UITableViewCell*)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    Quest *quest = [quests objectAtIndex:indexPath.row];
+//    Quest *quest = [quests objectAtIndex:indexPath.row];
+//    Quest *quest = [filteredArray objectAtIndex:indexPath.row];
+    Quest *quest = [Quest new];
+    if ([filteredArray count] == 0)
+    {
+        quest = [quests objectAtIndex:indexPath.row];
+    }
+    else
+    {
+        quest = [filteredArray objectAtIndex:indexPath.row];
+    }
+    
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"QuestListCellID"];
     cell.textLabel.text = quest.questName;
     cell.detailTextLabel.text = [NSString stringWithFormat:@"Quest Giver: %@",quest.questGiver];
@@ -99,7 +124,17 @@
     if ([segue.identifier isEqualToString:@"showQuestDetailViewController"])
     {
         NSIndexPath *indexPath = [questTableView indexPathForCell:sender];
-        Quest *quest = [quests objectAtIndex:indexPath.row];
+//        Quest *quest = [quests objectAtIndex:indexPath.row];
+        Quest *quest = [Quest new];
+        
+        if ([filteredArray count] == 0)
+        {
+            quest = [quests objectAtIndex:indexPath.row];
+        }
+        else
+        {
+            quest = [filteredArray objectAtIndex:indexPath.row];
+        }
         
         QuestDetailViewController *dvc = segue.destinationViewController;
         dvc.quest = quest;

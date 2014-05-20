@@ -26,17 +26,17 @@
 
 - (IBAction)onQuestSegmentedControlPressed:(id)sender
 {
-    if (questSegmentedControl.selectedSegmentIndex  == 0)
+    if (questSegmentedControl.selectedSegmentIndex  == 0) //Good
     {
-        [[NSNotificationCenter defaultCenter] postNotificationName:@"ChangeColor" object:self];
+        [[NSNotificationCenter defaultCenter] postNotificationName:@"FilterArray" object:self];
     }
-    else if (questSegmentedControl.selectedSegmentIndex == 1)
+    else if (questSegmentedControl.selectedSegmentIndex == 1) //Neutral
     {
-        [[NSNotificationCenter defaultCenter] postNotificationName:@"ChangeColor" object:self];
+        [[NSNotificationCenter defaultCenter] postNotificationName:@"FilterArray" object:self];
     }
-    else if (questSegmentedControl.selectedSegmentIndex == 2)
+    else if (questSegmentedControl.selectedSegmentIndex == 2) //Evil
     {
-        [[NSNotificationCenter defaultCenter] postNotificationName:@"ChangeColor" object:self];
+        [[NSNotificationCenter defaultCenter] postNotificationName:@"FilterArray" object:self];
     }
 }
 
