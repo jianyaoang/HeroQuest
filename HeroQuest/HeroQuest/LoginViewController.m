@@ -51,7 +51,7 @@
             }
             else
             {
-                UIAlertView *av = [[UIAlertView alloc] initWithTitle:@"Login Error" message:@"Please cehck username and password field" delegate:nil cancelButtonTitle:@"Okay" otherButtonTitles: nil];
+                UIAlertView *av = [[UIAlertView alloc] initWithTitle:@"Login Error" message:@"Please check username and password field" delegate:nil cancelButtonTitle:@"Okay" otherButtonTitles: nil];
                 [av show];
             }
         }];
