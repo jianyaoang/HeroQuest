@@ -87,8 +87,6 @@
 
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-//    return quests.count;
-//    return filteredArray.count;
     if ([filteredArray count] == 0)
     {
         return quests.count;
@@ -101,8 +99,6 @@
 
 -(UITableViewCell*)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-//    Quest *quest = [quests objectAtIndex:indexPath.row];
-//    Quest *quest = [filteredArray objectAtIndex:indexPath.row];
     Quest *quest = [Quest new];
     if ([filteredArray count] == 0)
     {
@@ -124,7 +120,6 @@
     if ([segue.identifier isEqualToString:@"showQuestDetailViewController"])
     {
         NSIndexPath *indexPath = [questTableView indexPathForCell:sender];
-//        Quest *quest = [quests objectAtIndex:indexPath.row];
         Quest *quest = [Quest new];
         
         if ([filteredArray count] == 0)
