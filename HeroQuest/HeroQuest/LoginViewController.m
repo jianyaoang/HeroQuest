@@ -28,6 +28,14 @@
     usernameTextField.delegate = self;
     passwordTextField.delegate = self;
     [self.navigationController setNavigationBarHidden:YES];
+//    QuestListViewController *qlvc = [QuestListViewController new];
+    
+    if ([PFUser currentUser] || [PFFacebookUtils isLinkedWithUser:[PFUser currentUser]])
+    {
+//        [self.navigationController pushViewController:qlvc animated:NO];
+        [self performSegueWithIdentifier:@"showQuestList" sender:self];
+    }
+    
 }
 
 - (IBAction)onLoginButtonPressed:(UIButton*)sender
