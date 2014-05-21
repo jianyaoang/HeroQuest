@@ -8,6 +8,7 @@
 
 #import "QuestDetailViewController.h"
 #import <MapKit/MapKit.h>
+#import <Parse/Parse.h>
 
 @interface QuestDetailViewController () <MKMapViewDelegate>
 {
@@ -80,7 +81,26 @@
 - (IBAction)onAcceptBarButtonPressed:(UIBarButtonItem*)sender
 {
     [sender setTitle:@"Complete"];
+    
+    PFObject *acceptedQuest = [PFObject objectWithClassName:@"acceptedQuest"];
+    acceptedQuest[@"questName"] = questName.text;
+    acceptedQuest[@"questGiver"] = questGiver.text;
+    acceptedQuest[@"questDescription"] = questDescription.text;
+    
+    [acceptedQuest saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error)
+    {
+        if (error)
+        {
+            NSLog(@"saving error: %@", [error userInfo]);
+        }
+        else
+        {
+            NSLog(@"quest saved");
+            [acceptedQuest saveInBackground];
+        }
+    }];
 }
+
 
 
 
