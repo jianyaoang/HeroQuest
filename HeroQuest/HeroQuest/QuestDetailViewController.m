@@ -11,6 +11,7 @@
 
 @interface QuestDetailViewController () <MKMapViewDelegate>
 {
+    IBOutlet UIBarButtonItem *questBarButtonItem;
     IBOutlet MKMapView *questMapView;
     IBOutlet UITextView *questDescription;
     IBOutlet UILabel *questName;
@@ -76,6 +77,10 @@
     }];
 }
 
+- (IBAction)onAcceptBarButtonPressed:(UIBarButtonItem*)sender
+{
+    [sender setTitle:@"Complete"];
+}
 
 
 

@@ -11,6 +11,7 @@
 #import <Parse/Parse.h>
 @interface LoginViewController () <UITextFieldDelegate>
 {
+    IBOutlet UISwitch *rememberMeSwitch;
     IBOutlet UIButton *loginButton;
     IBOutlet UITextField *usernameTextField;
     IBOutlet UITextField *passwordTextField;
@@ -28,14 +29,11 @@
     usernameTextField.delegate = self;
     passwordTextField.delegate = self;
     [self.navigationController setNavigationBarHidden:YES];
-//    QuestListViewController *qlvc = [QuestListViewController new];
     
     if ([PFUser currentUser] || [PFFacebookUtils isLinkedWithUser:[PFUser currentUser]])
     {
-//        [self.navigationController pushViewController:qlvc animated:NO];
         [self performSegueWithIdentifier:@"showQuestList" sender:self];
     }
-    
 }
 
 - (IBAction)onLoginButtonPressed:(UIButton*)sender
@@ -68,6 +66,11 @@
     [passwordTextField resignFirstResponder];
 }
 
+//- (IBAction)onRememberMeSwitchSlide:(id)sender
+//{
+//
+//}
+
 - (IBAction)onFacebookSignUpButtonPressed:(id)sender
 {
     NSArray *permissionArray = @[@"user_about_me",@"user_relationships", @"user_birthday", @"user_location"];
@@ -88,14 +91,12 @@
         else if (user.isNew)
         {
             NSLog(@"User with facebook signed up and logged in!");
-//            [self.navigationController pushViewController:vc animated:YES];
             [self performSegueWithIdentifier:@"showQuestList" sender:sender];
         }
         else
         {
             NSLog(@"User with facebook logged in!");
             [self performSegueWithIdentifier:@"showQuestList" sender:sender];
-//            [self.navigationController pushViewController:vc animated:YES];
         }
     }];
 }

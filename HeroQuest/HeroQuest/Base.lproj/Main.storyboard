@@ -35,7 +35,7 @@
                                 </connections>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="i5S-jR-vfy">
-                                <rect key="frame" x="80" y="182" width="160" height="30"/>
+                                <rect key="frame" x="80" y="187" width="160" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Login">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
@@ -45,7 +45,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dP4-U0-la0">
-                                <rect key="frame" x="80" y="210" width="160" height="30"/>
+                                <rect key="frame" x="80" y="222" width="160" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Sign Up">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
@@ -55,7 +55,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3UE-Oc-GF0">
-                                <rect key="frame" x="96" y="237" width="128" height="30"/>
+                                <rect key="frame" x="80" y="255" width="160" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Facebook Sign Up">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
@@ -297,8 +297,15 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
-                    <navigationItem key="navigationItem" id="Vap-Vp-Pcw"/>
+                    <navigationItem key="navigationItem" id="Vap-Vp-Pcw">
+                        <barButtonItem key="rightBarButtonItem" title="Accept" id="LW6-Mf-iSv">
+                            <connections>
+                                <action selector="onAcceptBarButtonPressed:" destination="2tA-fF-peb" id="x25-Xm-alo"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
+                        <outlet property="questBarButtonItem" destination="LW6-Mf-iSv" id="YMg-3J-uGb"/>
                         <outlet property="questDescription" destination="Htb-u1-g7L" id="tgE-cn-t5h"/>
                         <outlet property="questGiver" destination="d5h-gG-neK" id="jMd-AO-rto"/>
                         <outlet property="questMapView" destination="eo9-Ds-xfK" id="ULg-7J-RI3"/>
@@ -334,6 +341,6 @@
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="S3W-Cz-tTg"/>
+        <segue reference="LTt-8f-hY5"/>
     </inferredMetricsTieBreakers>
 </document>

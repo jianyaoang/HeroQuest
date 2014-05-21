@@ -41,8 +41,6 @@
     NSString *username = [usernameTextField.text stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
     NSString *password = [passwordTextField.text stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
     NSString *name = [nameTextField.text stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
-//    NSString *alignment = alignmentSegmentedControl.textInputContextIdentifier;
-
     
     if (username.length == 0 || password.length == 0 || name.length == 0)
     {
