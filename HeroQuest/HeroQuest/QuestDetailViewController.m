@@ -82,10 +82,10 @@
 {
     [sender setTitle:@"Complete"];
     
-    PFObject *acceptedQuest = [PFObject objectWithClassName:@"acceptedQuest"];
-    acceptedQuest[@"questName"] = questName.text;
-    acceptedQuest[@"questGiver"] = questGiver.text;
-    acceptedQuest[@"questDescription"] = questDescription.text;
+    PFObject *acceptedQuest = [PFObject objectWithClassName:@"AcceptedQuest"];
+    acceptedQuest[@"questName"] = self.quest.questName;
+    acceptedQuest[@"questGiver"] = self.quest.questGiver;
+    acceptedQuest[@"questDescription"] = self.quest.questDescription;
     
     [acceptedQuest saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error)
     {

@@ -10,14 +10,17 @@
 #import "QuestDetailViewController.h"
 #import "Quest.h"
 #import "SettingsViewController.h"
+#import <Parse/Parse.h>
+
 @interface QuestListViewController () <UITableViewDataSource, UITableViewDelegate>
 {
     IBOutlet UITableView *questTableView;
     NSMutableArray *questNames;
     NSMutableArray *questGivers;
     NSMutableArray *quests;
+    NSMutableArray *questsMenu;
     NSArray *filteredArray;
-    
+    IBOutlet UISegmentedControl *questMenuSegmentedControl;
 }
 @end
 
@@ -27,6 +30,7 @@
 {
     [super viewDidLoad];
     filteredArray = [NSArray new];
+    questsMenu = [NSMutableArray new];
     quests = [NSMutableArray new];
     [self assigningQuestDetails];
     
@@ -136,6 +140,60 @@
     cell.textLabel.text = quest.questName;
     cell.detailTextLabel.text = [NSString stringWithFormat:@"Quest Giver: %@",quest.questGiver];
     return cell;
+}
+
+- (IBAction)onQuestMenuPressed:(UISegmentedControl*)sender
+{
+    if (sender.selectedSegmentIndex == 0)
+    {
+        sender.tintColor = [UIColor purpleColor];
+    }
+    else if (sender.selectedSegmentIndex == 1)
+    {
+        sender.tintColor = [UIColor blueColor];
+        
+        [quests removeAllObjects];
+        PFQuery *query = [PFQuery queryWithClassName:@"AcceptedQuest"];
+        [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error)
+        {
+            [[UIApplication sharedApplication] setNetworkActivityIndicatorVisible:YES];
+            if (!error)
+            {
+                NSLog(@"query done");
+                for (Quest *quest in objects)
+                {
+//                    [quests addObject:quest];
+                    [questsMenu addObject:quest];
+                }
+                [questTableView reloadData];
+            }
+            else
+            {
+                NSLog(@"error: %@", [error userInfo]);
+            }
+            
+//            if (error)
+//            {
+//                NSLog(@"error: %@", [error userInfo]);
+//            }
+//            else
+//            {
+//                NSLog(@"query successful");
+//                for (Quest *quest in objects)
+//                {
+////                    [quests addObjectsFromArray:quest];
+//                    [quests addObject:quest];
+//                }
+//                [questTableView reloadData];
+//            }
+            [[UIApplication sharedApplication] setNetworkActivityIndicatorVisible:NO];
+        }];
+        
+    }
+    else if (sender.selectedSegmentIndex == 2)
+    {
+        sender.tintColor = [UIColor greenColor];
+    }
 }
 
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
