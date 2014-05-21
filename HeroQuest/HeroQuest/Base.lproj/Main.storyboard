@@ -111,7 +111,7 @@
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tvz-Xd-oMx">
-                                <rect key="frame" x="63" y="214" width="195" height="30"/>
+                                <rect key="frame" x="63" y="254" width="195" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Sign Up">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
@@ -120,11 +120,21 @@
                                     <action selector="onSignUpButtonPressed:" destination="upA-2S-6VP" eventType="touchUpInside" id="jrk-rI-AXq"/>
                                 </connections>
                             </button>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="XPE-zM-nI0">
+                                <rect key="frame" x="20" y="213" width="280" height="29"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <segments>
+                                    <segment title="Good"/>
+                                    <segment title="Neutral"/>
+                                    <segment title="Evil"/>
+                                </segments>
+                            </segmentedControl>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" id="fSm-QJ-YfS"/>
                     <connections>
+                        <outlet property="alignmentSegmentedControl" destination="XPE-zM-nI0" id="kDQ-jq-cR4"/>
                         <outlet property="nameTextField" destination="wfo-vU-cjs" id="WRE-fn-XlT"/>
                         <outlet property="passwordTextField" destination="avr-pE-uzP" id="rRW-EG-nve"/>
                         <outlet property="usernameTextField" destination="lOR-6r-Wcu" id="qIl-Ze-OxY"/>
@@ -133,7 +143,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="I65-pN-t5N" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1231" y="748"/>
+            <point key="canvasLocation" x="1143" y="456"/>
         </scene>
         <!--Quest List View Controller-->
         <scene sceneID="tza-jg-ROV">
@@ -324,6 +334,6 @@
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="LTt-8f-hY5"/>
+        <segue reference="S3W-Cz-tTg"/>
     </inferredMetricsTieBreakers>
 </document>

@@ -15,6 +15,7 @@
     IBOutlet UITextField *nameTextField;
     IBOutlet UITextField *usernameTextField;
     IBOutlet UITextField *passwordTextField;
+    IBOutlet UISegmentedControl *alignmentSegmentedControl;
 }
 
 @end
@@ -30,6 +31,9 @@
     passwordTextField.delegate = self;
     nameTextField.delegate     = self;
 
+    [alignmentSegmentedControl setTitle:@"GOOD" forSegmentAtIndex:0];
+    [alignmentSegmentedControl setTitle:@"NEUTRAL" forSegmentAtIndex:1];
+    [alignmentSegmentedControl setTitle:@"EVIL" forSegmentAtIndex:2];
 }
 
 - (IBAction)onSignUpButtonPressed:(UIButton*)sender
@@ -37,6 +41,8 @@
     NSString *username = [usernameTextField.text stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
     NSString *password = [passwordTextField.text stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
     NSString *name = [nameTextField.text stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
+//    NSString *alignment = alignmentSegmentedControl.textInputContextIdentifier;
+
     
     if (username.length == 0 || password.length == 0 || name.length == 0)
     {
@@ -49,6 +55,7 @@
         newUser.username = username;
         newUser.password = password;
         newUser[@"name"] = name;
+        newUser[@"alignment"] = [alignmentSegmentedControl titleForSegmentAtIndex:alignmentSegmentedControl.selectedSegmentIndex];
         
         [newUser signUpInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
             if (!error)

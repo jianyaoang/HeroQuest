@@ -17,6 +17,7 @@
     NSMutableArray *questGivers;
     NSMutableArray *quests;
     NSArray *filteredArray;
+    
 }
 @end
 
@@ -32,6 +33,13 @@
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(handleNotificationEvil:) name:@"FilterArrayEvil" object:nil];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(handleNotificationGood:) name:@"FilterArrayGood" object:nil];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(handleNotificationNeutral:) name:@"FilterArrayNeutral" object:nil];
+}
+
+-(void)handleNotification:(NSNotification*)notification
+{
+    NSPredicate *filterArray = [NSPredicate predicateWithFormat:@"%K = %@",@"alignment", @"NEUTRAL"];
+    filteredArray = [quests filteredArrayUsingPredicate:filterArray];
+    [questTableView reloadData];
 }
 
 -(void)handleNotificationEvil:(NSNotification*)notification
