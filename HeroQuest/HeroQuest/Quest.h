@@ -15,7 +15,7 @@
 @property (nonatomic, strong) NSString *alignment;
 @property float locationLatitude;
 @property float locationLongitude;
-@property float QuestGiverLatitude;
-@property float QuestGiverLongitude;
+@property float questGiverLatitude;
+@property float questGiverLongitude;
 
 @end

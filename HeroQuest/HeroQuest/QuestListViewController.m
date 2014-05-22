@@ -18,7 +18,6 @@
     NSMutableArray *questNames;
     NSMutableArray *questGivers;
     NSMutableArray *quests;
-    NSMutableArray *questsMenu;
     NSArray *filteredArray;
     IBOutlet UISegmentedControl *questMenuSegmentedControl;
 }
@@ -30,7 +29,6 @@
 {
     [super viewDidLoad];
     filteredArray = [NSArray new];
-    questsMenu = [NSMutableArray new];
     quests = [NSMutableArray new];
     [self assigningQuestDetails];
     
@@ -86,8 +84,8 @@
     quest1.alignment = @"GOOD";
     quest1.locationLatitude = 46.908588;
     quest1.locationLongitude = -96.808991;
-    quest1.QuestGiverLatitude = 46.8541979;
-    quest1.QuestGiverLongitude = -96.8285138;
+    quest1.questGiverLatitude = 46.8541979;
+    quest1.questGiverLongitude = -96.8285138;
     
     Quest *quest2 = [Quest new];
     quest2.questName = @"Special Delivery";
@@ -96,8 +94,8 @@
     quest2.alignment = @"NEUTRAL";
     quest2.locationLatitude = 46.8657639;
     quest2.locationLongitude = -96.7363173;
-    quest2.QuestGiverLatitude = 46.8739748;
-    quest2.QuestGiverLongitude = -96.806112;
+    quest2.questGiverLatitude = 46.8739748;
+    quest2.questGiverLongitude = -96.806112;
     
     Quest *quest3 = [Quest new];
     quest3.questName = @"Filthy Mongrel";
@@ -106,8 +104,8 @@
     quest3.alignment = @"EVIL";
     quest3.locationLatitude = 46.892386;
     quest3.locationLongitude = -96.799669;
-    quest3.QuestGiverLatitude = 46.8739748;
-    quest3.QuestGiverLongitude = -96.806112;
+    quest3.questGiverLatitude = 46.8739748;
+    quest3.questGiverLongitude = -96.806112;
     
     quests = [NSMutableArray arrayWithObjects:quest1,quest2,quest3, nil];
 }
@@ -158,10 +156,12 @@
         sender.tintColor = [UIColor blueColor];
         
         [quests removeAllObjects];
+        
         PFQuery *query = [PFQuery queryWithClassName:@"AcceptedQuest"];
         [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error)
         {
             [[UIApplication sharedApplication] setNetworkActivityIndicatorVisible:YES];
+            
             if (!error)
             {
                 NSLog(@"query done");
@@ -170,9 +170,13 @@
                     Quest *quest = [Quest new];
                     quest.questName = [item objectForKey:@"questName"];
                     quest.questGiver = [item objectForKey:@"questGiver"];
+                    quest.questDescription = [item objectForKey:@"questDescription"];
+                    quest.locationLatitude = [[item objectForKey:@"locationLatitude"]floatValue];
+                    quest.locationLongitude = [[item objectForKey:@"locationLongitude"]floatValue];
+                    quest.questGiverLatitude = [[item objectForKey:@"questGiverLatitude"]floatValue];
+                    quest.questGiverLongitude = [[item objectForKey:@"questGiverLongitude"]floatValue];
                     
                     [quests addObject:quest];
-//                    [questsMenu addObject:quest];
                 }
                 [questTableView reloadData];
             }

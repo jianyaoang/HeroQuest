@@ -42,7 +42,7 @@
     
     questMapView.showsUserLocation = YES;
     
-    CLLocationCoordinate2D centerCoordinate = CLLocationCoordinate2DMake(self.quest.QuestGiverLatitude, self.quest.QuestGiverLongitude);
+    CLLocationCoordinate2D centerCoordinate = CLLocationCoordinate2DMake(self.quest.questGiverLatitude, self.quest.questGiverLongitude);
     MKCoordinateSpan coordinateSpan = MKCoordinateSpanMake(0.09, 0.09);
     MKCoordinateRegion region = MKCoordinateRegionMake(centerCoordinate, coordinateSpan);
     questMapView.region = region;
@@ -86,6 +86,10 @@
     acceptedQuest[@"questName"] = self.quest.questName;
     acceptedQuest[@"questGiver"] = self.quest.questGiver;
     acceptedQuest[@"questDescription"] = self.quest.questDescription;
+    acceptedQuest[@"locationLatitude"] = [NSNumber numberWithFloat:self.quest.questGiverLatitude];
+    acceptedQuest[@"locationLongitude"] = [NSNumber numberWithFloat:self.quest.questGiverLongitude];
+    acceptedQuest[@"questGiverLatitude"] = [NSNumber numberWithFloat:self.quest.questGiverLatitude];
+    acceptedQuest[@"questGiverLongitude"] = [NSNumber numberWithFloat:self.quest.questGiverLongitude];
     
     [acceptedQuest saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error)
     {
