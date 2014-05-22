@@ -125,10 +125,6 @@
 -(UITableViewCell*)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     Quest *quest = [Quest new];
-//    if ([filteredArray count] == 0 && [quests count] == 0)
-//    {
-//        quest = [questsMenu objectAtIndex:indexPath.row];
-//    }
     
     if ([filteredArray count] == 0)
     {
@@ -150,6 +146,10 @@
     if (sender.selectedSegmentIndex == 0)
     {
         sender.tintColor = [UIColor purpleColor];
+        
+        [self assigningQuestDetails];
+        
+        [questTableView reloadData];
     }
     else if (sender.selectedSegmentIndex == 1)
     {
@@ -184,21 +184,7 @@
             {
                 NSLog(@"error: %@", [error userInfo]);
             }
-            
-//            if (error)
-//            {
-//                NSLog(@"error: %@", [error userInfo]);
-//            }
-//            else
-//            {
-//                NSLog(@"query successful");
-//                for (Quest *quest in objects)
-//                {
-////                    [quests addObjectsFromArray:quest];
-//                    [quests addObject:quest];
-//                }
-//                [questTableView reloadData];
-//            }
+
             [[UIApplication sharedApplication] setNetworkActivityIndicatorVisible:NO];
         }];
         
