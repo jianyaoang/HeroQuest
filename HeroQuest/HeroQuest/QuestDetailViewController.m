@@ -86,8 +86,8 @@
     acceptedQuest[@"questName"] = self.quest.questName;
     acceptedQuest[@"questGiver"] = self.quest.questGiver;
     acceptedQuest[@"questDescription"] = self.quest.questDescription;
-    acceptedQuest[@"locationLatitude"] = [NSNumber numberWithFloat:self.quest.questGiverLatitude];
-    acceptedQuest[@"locationLongitude"] = [NSNumber numberWithFloat:self.quest.questGiverLongitude];
+    acceptedQuest[@"locationLatitude"] = [NSNumber numberWithFloat:self.quest.locationLatitude];
+    acceptedQuest[@"locationLongitude"] = [NSNumber numberWithFloat:self.quest.locationLongitude];
     acceptedQuest[@"questGiverLatitude"] = [NSNumber numberWithFloat:self.quest.questGiverLatitude];
     acceptedQuest[@"questGiverLongitude"] = [NSNumber numberWithFloat:self.quest.questGiverLongitude];
     
