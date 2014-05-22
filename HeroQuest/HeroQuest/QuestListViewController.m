@@ -127,6 +127,11 @@
 -(UITableViewCell*)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     Quest *quest = [Quest new];
+//    if ([filteredArray count] == 0 && [quests count] == 0)
+//    {
+//        quest = [questsMenu objectAtIndex:indexPath.row];
+//    }
+    
     if ([filteredArray count] == 0)
     {
         quest = [quests objectAtIndex:indexPath.row];
@@ -160,10 +165,14 @@
             if (!error)
             {
                 NSLog(@"query done");
-                for (Quest *quest in objects)
+                for (PFObject *item in objects)
                 {
-//                    [quests addObject:quest];
-                    [questsMenu addObject:quest];
+                    Quest *quest = [Quest new];
+                    quest.questName = [item objectForKey:@"questName"];
+                    quest.questGiver = [item objectForKey:@"questGiver"];
+                    
+                    [quests addObject:quest];
+//                    [questsMenu addObject:quest];
                 }
                 [questTableView reloadData];
             }
