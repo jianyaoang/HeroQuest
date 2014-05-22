@@ -30,18 +30,16 @@
     [super viewDidLoad];
     filteredArray = [NSArray new];
     quests = [NSMutableArray new];
+    self.availableQuests = [NSMutableArray new];
+    
     [self assigningQuestDetails];
+    
+    [self.availableQuests removeAllObjects];
+    [self.availableQuests addObjectsFromArray:quests];
     
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(handleNotificationEvil:) name:@"FilterArrayEvil" object:nil];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(handleNotificationGood:) name:@"FilterArrayGood" object:nil];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(handleNotificationNeutral:) name:@"FilterArrayNeutral" object:nil];
-}
-
--(void)handleNotification:(NSNotification*)notification
-{
-    NSPredicate *filterArray = [NSPredicate predicateWithFormat:@"%K = %@",@"alignment", @"NEUTRAL"];
-    filteredArray = [quests filteredArrayUsingPredicate:filterArray];
-    [questTableView reloadData];
 }
 
 -(void)handleNotificationEvil:(NSNotification*)notification
@@ -145,16 +143,14 @@
 {
     if (sender.selectedSegmentIndex == 0)
     {
-        sender.tintColor = [UIColor purpleColor];
-        
-        [self assigningQuestDetails];
+        //[self assigningQuestDetails];
+        [quests removeAllObjects];
+        [quests addObjectsFromArray:self.availableQuests];
         
         [questTableView reloadData];
     }
     else if (sender.selectedSegmentIndex == 1)
     {
-        sender.tintColor = [UIColor blueColor];
-        
         [quests removeAllObjects];
         
         PFQuery *query = [PFQuery queryWithClassName:@"AcceptedQuest"];
@@ -178,7 +174,10 @@
                     
                     [quests addObject:quest];
                 }
-                [questTableView reloadData];
+                
+                dispatch_async(dispatch_get_main_queue(), ^{
+                    [questTableView reloadData];
+                });
             }
             else
             {
@@ -214,13 +213,17 @@
         QuestDetailViewController *dvc = segue.destinationViewController;
         dvc.quest = quest;
         dvc.navigationItem.title = quest.questName;
-//        dvc.managedObjectContext = self.managedObjectContext;
+//        dvc.quests = quests;
+        //dvc.quests = [quests objectAtIndex:[questTableView indexPathForSelectedRow].row];
+        //dvc.quests = quests;
+        dvc.qlvc = self;
+        dvc.index = indexPath.row;
+
     }
     else if ([segue.identifier isEqualToString:@"showSettingsViewController"])
     {
         SettingsViewController *svc  = segue.destinationViewController;
         svc.navigationItem.title = @"Quest Settings";
-//        svc.managedObjectContext = self.managedObjectContext;
     }
 }
 
