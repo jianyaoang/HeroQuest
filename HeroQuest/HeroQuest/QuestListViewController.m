@@ -143,7 +143,6 @@
 {
     if (sender.selectedSegmentIndex == 0)
     {
-        //[self assigningQuestDetails];
         [quests removeAllObjects];
         [quests addObjectsFromArray:self.availableQuests];
         
@@ -213,9 +212,6 @@
         QuestDetailViewController *dvc = segue.destinationViewController;
         dvc.quest = quest;
         dvc.navigationItem.title = quest.questName;
-//        dvc.quests = quests;
-        //dvc.quests = [quests objectAtIndex:[questTableView indexPathForSelectedRow].row];
-        //dvc.quests = quests;
         dvc.qlvc = self;
         dvc.index = indexPath.row;
 

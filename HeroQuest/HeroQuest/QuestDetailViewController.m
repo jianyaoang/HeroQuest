@@ -18,7 +18,6 @@
     IBOutlet UILabel *questName;
     IBOutlet UILabel *questGiver;
     MKPointAnnotation *questGiverLocation;
-    NSMutableArray * discardObject;
 }
 @end
 
@@ -27,7 +26,6 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    discardObject = [NSMutableArray new];
     
     questName.text = [NSString stringWithFormat:@"Quest Name: %@",self.quest.questName];
     
