@@ -12,6 +12,7 @@
 
 @interface QuestDetailViewController () <MKMapViewDelegate>
 {
+    IBOutlet UIImageView *questImage;
     IBOutlet UIBarButtonItem *questBarButtonItem;
     IBOutlet MKMapView *questMapView;
     IBOutlet UITextView *questDescription;
@@ -28,6 +29,9 @@
     [super viewDidLoad];
     
     questName.text = [NSString stringWithFormat:@"Quest Name: %@",self.quest.questName];
+    questName.numberOfLines = 0;
+    
+    questImage.image = self.quest.questImage;
     
     questGiver.text = [NSString stringWithFormat:@"Quest Giver: %@",self.quest.questGiver];
     questGiver.numberOfLines = 0;
