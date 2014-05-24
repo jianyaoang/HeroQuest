@@ -179,10 +179,10 @@
             
             if (!error)
             {
-                Quest *quest = [Quest new];
                 NSLog(@"query done");
                 for (PFObject *item in objects)
                 {
+                    Quest *quest = [Quest new];
                     PFFile *questImageFile = item[@"questImage"];
                     [questImageFile getDataInBackgroundWithBlock:^(NSData *data, NSError *error)
                     {
@@ -190,8 +190,6 @@
                         {
                             UIImage *questImage = [UIImage imageWithData:data];
                             quest.questImage = questImage;
-                            
-                            [quests addObject:quest.questImage];
                         }
                     }];
                     
