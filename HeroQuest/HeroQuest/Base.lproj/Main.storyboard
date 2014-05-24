@@ -69,8 +69,10 @@
                     </view>
                     <navigationItem key="navigationItem" id="ckQ-fe-5bz"/>
                     <connections>
+                        <outlet property="FacebookSignUpButton" destination="3UE-Oc-GF0" id="qho-bX-LfX"/>
                         <outlet property="loginButton" destination="i5S-jR-vfy" id="ucK-b4-Ac3"/>
                         <outlet property="passwordTextField" destination="ln4-oo-z4P" id="adC-wX-zs5"/>
+                        <outlet property="signUpButton" destination="dP4-U0-la0" id="bKB-GT-Ik2"/>
                         <outlet property="usernameTextField" destination="yAU-KO-btd" id="fEN-Rl-jiF"/>
                         <segue destination="BoG-sM-fqa" kind="push" identifier="showQuestList" id="LTt-8f-hY5"/>
                         <segue destination="upA-2S-6VP" kind="push" identifier="showSignUpView" id="amH-aT-Hi5"/>
@@ -137,6 +139,7 @@
                         <outlet property="alignmentSegmentedControl" destination="XPE-zM-nI0" id="kDQ-jq-cR4"/>
                         <outlet property="nameTextField" destination="wfo-vU-cjs" id="WRE-fn-XlT"/>
                         <outlet property="passwordTextField" destination="avr-pE-uzP" id="rRW-EG-nve"/>
+                        <outlet property="signUpButton" destination="tvz-Xd-oMx" id="vKz-s8-v3M"/>
                         <outlet property="usernameTextField" destination="lOR-6r-Wcu" id="qIl-Ze-OxY"/>
                         <segue destination="BoG-sM-fqa" kind="push" identifier="showQuestListView" id="S3W-Cz-tTg"/>
                     </connections>
@@ -220,6 +223,7 @@
                     <connections>
                         <outlet property="questMenuSegmentedControl" destination="qq8-QG-b6B" id="jeV-16-CKI"/>
                         <outlet property="questTableView" destination="JED-m0-D6e" id="Uv0-WE-lpq"/>
+                        <outlet property="settingsBarButtonItem" destination="cWh-lo-KeZ" id="q7u-e4-vNR"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Fet-ur-Cjj" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -286,7 +290,7 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Htb-u1-g7L">
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" editable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Htb-u1-g7L">
                                 <rect key="frame" x="20" y="258" width="280" height="105"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
@@ -322,6 +326,7 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="questAcceptAndCompleteBarButton" destination="LW6-Mf-iSv" id="3Hh-Lh-ilm"/>
                         <outlet property="questBarButtonItem" destination="LW6-Mf-iSv" id="YMg-3J-uGb"/>
                         <outlet property="questDescription" destination="Htb-u1-g7L" id="tgE-cn-t5h"/>
                         <outlet property="questGiver" destination="d5h-gG-neK" id="jMd-AO-rto"/>
@@ -359,6 +364,6 @@
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="LTt-8f-hY5"/>
+        <segue reference="S3W-Cz-tTg"/>
     </inferredMetricsTieBreakers>
 </document>

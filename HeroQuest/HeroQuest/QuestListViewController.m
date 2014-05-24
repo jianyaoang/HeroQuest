@@ -20,6 +20,7 @@
     NSMutableArray *quests;
     NSArray *filteredArray;
     IBOutlet UISegmentedControl *questMenuSegmentedControl;
+    IBOutlet UIBarButtonItem *settingsBarButtonItem;
 }
 @end
 
@@ -43,6 +44,9 @@
     
     NSDictionary *attributes = @{NSFontAttributeName: [UIFont fontWithName:@"Redressed" size:15]};
     [questMenuSegmentedControl setTitleTextAttributes:attributes forState:UIControlStateNormal];
+    
+    self.navigationController.navigationBar.titleTextAttributes = @{NSFontAttributeName: [UIFont fontWithName:@"Redressed" size:20]};
+    [settingsBarButtonItem setTitleTextAttributes:@{NSFontAttributeName: [UIFont fontWithName:@"Redressed" size:20]} forState:UIControlStateNormal];
 }
 
 -(void)handleNotificationEvil:(NSNotification*)notification

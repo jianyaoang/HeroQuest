@@ -13,6 +13,8 @@
 {
     IBOutlet UISwitch *rememberMeSwitch;
     IBOutlet UIButton *loginButton;
+    IBOutlet UIButton *signUpButton;
+    IBOutlet UIButton *FacebookSignUpButton;
     IBOutlet UITextField *usernameTextField;
     IBOutlet UITextField *passwordTextField;
 }
@@ -26,7 +28,12 @@
     [super viewDidLoad];
     [PFFacebookUtils initializeFacebook];
     
-    usernameTextField.font = [UIFont fontWithName:@"Redressed" size:14];
+    usernameTextField.font = [UIFont fontWithName:@"Redressed" size:20];
+    passwordTextField.font = [UIFont fontWithName:@"Redressed" size:20];
+    
+    loginButton.titleLabel.font = [UIFont fontWithName:@"Redressed" size:20];
+    signUpButton.titleLabel.font = [UIFont fontWithName:@"Redressed" size:20];
+    FacebookSignUpButton.titleLabel.font = [UIFont fontWithName:@"Redressed" size:20];
     
     usernameTextField.delegate = self;
     passwordTextField.delegate = self;
@@ -113,6 +120,11 @@
     usernameTextField.placeholder = @"";
     passwordTextField.placeholder = @"";
     passwordTextField.secureTextEntry = YES;
+}
+
+- (void) touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
+{
+    [self.view endEditing:YES];
 }
 
 - (BOOL)shouldPerformSegueWithIdentifier:(NSString *)identifier sender:(id)sender {

@@ -16,6 +16,7 @@
     IBOutlet UITextField *usernameTextField;
     IBOutlet UITextField *passwordTextField;
     IBOutlet UISegmentedControl *alignmentSegmentedControl;
+    IBOutlet UIButton *signUpButton;
 }
 
 @end
@@ -25,15 +26,23 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    [self.view endEditing:YES];
-    
     usernameTextField.delegate = self;
     passwordTextField.delegate = self;
     nameTextField.delegate     = self;
-
+    
+    usernameTextField.font = [UIFont fontWithName:@"Redressed" size:20];
+    passwordTextField.font = [UIFont fontWithName:@"Redressed" size:20];
+    nameTextField.font = [UIFont fontWithName:@"Redressed" size:20];
+    
+    NSDictionary *attributes = @{NSFontAttributeName: [UIFont fontWithName:@"Redressed" size:20]};
+    
     [alignmentSegmentedControl setTitle:@"GOOD" forSegmentAtIndex:0];
     [alignmentSegmentedControl setTitle:@"NEUTRAL" forSegmentAtIndex:1];
     [alignmentSegmentedControl setTitle:@"EVIL" forSegmentAtIndex:2];
+    [alignmentSegmentedControl setTitleTextAttributes:attributes forState:UIControlStateNormal];
+    
+    signUpButton.titleLabel.font = [UIFont fontWithName:@"Redressed" size:20];
+
 }
 
 - (IBAction)onSignUpButtonPressed:(UIButton*)sender
@@ -77,7 +86,13 @@
 {
     usernameTextField.placeholder = @"";
     passwordTextField.placeholder = @"";
+    nameTextField.placeholder = @"";
     passwordTextField.secureTextEntry = YES;
+}
+
+- (void) touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
+{
+    [self.view endEditing:YES];
 }
 
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender

@@ -18,6 +18,7 @@
     IBOutlet UITextView *questDescription;
     IBOutlet UILabel *questName;
     IBOutlet UILabel *questGiver;
+    IBOutlet UIBarButtonItem *questAcceptAndCompleteBarButton;
     MKPointAnnotation *questGiverLocation;
 }
 @end
@@ -31,7 +32,7 @@
     questName.text = [NSString stringWithFormat:@"Quest Name: %@",self.quest.questName];
     questName.numberOfLines = 0;
     questName.font = [UIFont fontWithName:@"Redressed" size:15];
-    
+
     questImage.layer.cornerRadius = questImage.frame.size.width/2;
     questImage.layer.borderWidth = 2.0;
     questImage.layer.borderColor = [[UIColor darkGrayColor]CGColor];
@@ -45,6 +46,11 @@
     
     questDescription.text = self.quest.questDescription;
     questDescription.font = [UIFont fontWithName:@"Redressed" size:15];
+    
+    NSDictionary *attributes = @{NSFontAttributeName: [UIFont fontWithName:@"Redressed" size:20]};
+    [questAcceptAndCompleteBarButton setTitleTextAttributes:attributes forState:UIControlStateNormal];
+    
+    [[UIBarButtonItem appearance] setTitleTextAttributes:attributes forState:UIControlStateNormal];
     
     [self displayingQuestLocationAndQuestGiverOnMap];
 }
