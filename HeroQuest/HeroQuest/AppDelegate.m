@@ -15,6 +15,8 @@
 //    [Parse setApplicationId:@"BC9SL6f99YJHlwNneAkqnG6zJ5hZXWWPfzakDAdQ"
 //                  clientKey:@"fdi7L1RiZUPsCAzlDQHejF7uyRJcrXRhs9zg2kfq"];
     
+    self.window.tintColor = [UIColor colorWithRed:0.02f green:0.38 blue:0.60 alpha:1];
+    
     [Parse setApplicationId:@"7LYoRlnMOgFkFkeLbxtrWspwV5ph7UTly5p6P6Ez"
                   clientKey:@"iu7Hjy3u72fs6wtqukxdFDMfr1jn7jjnNGFGGpgC"];
     return YES;

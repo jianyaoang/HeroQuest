@@ -26,6 +26,8 @@
     [super viewDidLoad];
     [PFFacebookUtils initializeFacebook];
     
+    usernameTextField.font = [UIFont fontWithName:@"Redressed" size:14];
+    
     usernameTextField.delegate = self;
     passwordTextField.delegate = self;
     [self.navigationController setNavigationBarHidden:YES];

@@ -105,31 +105,59 @@
 
 - (IBAction)onAcceptBarButtonPressed:(UIBarButtonItem*)sender
 {
-    [sender setTitle:@"Complete"];
     
-    PFObject *acceptedQuest = [PFObject objectWithClassName:@"AcceptedQuest"];
-    acceptedQuest[@"questName"] = self.quest.questName;
-    acceptedQuest[@"questGiver"] = self.quest.questGiver;
-    acceptedQuest[@"questDescription"] = self.quest.questDescription;
-    acceptedQuest[@"locationLatitude"] = [NSNumber numberWithFloat:self.quest.locationLatitude];
-    acceptedQuest[@"locationLongitude"] = [NSNumber numberWithFloat:self.quest.locationLongitude];
-    acceptedQuest[@"questGiverLatitude"] = [NSNumber numberWithFloat:self.quest.questGiverLatitude];
-    acceptedQuest[@"questGiverLongitude"] = [NSNumber numberWithFloat:self.quest.questGiverLongitude];
-    
-    [acceptedQuest saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error)
+    if ([sender.title isEqualToString:@"Accept"])
     {
-        if (error)
+        [sender setTitle:@"Complete"];
+        
+        PFObject *acceptedQuest = [PFObject objectWithClassName:@"AcceptedQuest"];
+        acceptedQuest[@"questName"] = self.quest.questName;
+        acceptedQuest[@"questGiver"] = self.quest.questGiver;
+        acceptedQuest[@"questDescription"] = self.quest.questDescription;
+        acceptedQuest[@"locationLatitude"] = [NSNumber numberWithFloat:self.quest.locationLatitude];
+        acceptedQuest[@"locationLongitude"] = [NSNumber numberWithFloat:self.quest.locationLongitude];
+        acceptedQuest[@"questGiverLatitude"] = [NSNumber numberWithFloat:self.quest.questGiverLatitude];
+        acceptedQuest[@"questGiverLongitude"] = [NSNumber numberWithFloat:self.quest.questGiverLongitude];
+        
+        [acceptedQuest saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error)
+         {
+             if (error)
+             {
+                 NSLog(@"saving error: %@", [error userInfo]);
+             }
+             else
+             {
+                 NSLog(@"quest saved");
+                 [acceptedQuest saveInBackground];
+             }
+         }];
+        
+        [self.qlvc.availableQuests removeObjectAtIndex:self.index];
+    }
+    else if ([sender.title isEqualToString:@"Complete"])
+    {
+        PFObject *completeQuest = [PFObject objectWithClassName:@"CompleteQuest"];
+        completeQuest[@"questName"] = self.quest.questName;
+        completeQuest[@"questGiver"] = self.quest.questGiver;
+        completeQuest[@"questDescription"] = self.quest.questDescription;
+        completeQuest[@"locationLatitude"] = [NSNumber numberWithFloat:self.quest.locationLatitude];
+        completeQuest[@"locationLongitude"] = [NSNumber numberWithFloat:self.quest.locationLongitude];
+        completeQuest[@"questGiverLatitude"] = [NSNumber numberWithFloat:self.quest.questGiverLatitude];
+        completeQuest[@"questGiverLongitude"] = [NSNumber numberWithFloat:self.quest.questGiverLongitude];
+        
+        [completeQuest saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error)
         {
-            NSLog(@"saving error: %@", [error userInfo]);
-        }
-        else
-        {
-            NSLog(@"quest saved");
-            [acceptedQuest saveInBackground];
-        }
-    }];
-    
-    [self.qlvc.availableQuests removeObjectAtIndex:self.index];
+            if (error)
+            {
+                NSLog(@"Complete Quest saving error: %@", [error userInfo]);
+            }
+            else
+            {
+                NSLog(@"completeQuest succesfully saved");
+                [completeQuest saveInBackground];
+            }
+        }];
+    }
 }
 
 

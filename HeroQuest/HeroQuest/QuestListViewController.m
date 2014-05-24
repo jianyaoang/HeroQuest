@@ -40,6 +40,9 @@
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(handleNotificationEvil:) name:@"FilterArrayEvil" object:nil];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(handleNotificationGood:) name:@"FilterArrayGood" object:nil];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(handleNotificationNeutral:) name:@"FilterArrayNeutral" object:nil];
+    
+    NSDictionary *attributes = @{NSFontAttributeName: [UIFont fontWithName:@"Redressed" size:15]};
+    [questMenuSegmentedControl setTitleTextAttributes:attributes forState:UIControlStateNormal];
 }
 
 -(void)handleNotificationEvil:(NSNotification*)notification
@@ -137,7 +140,11 @@
     }
     
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"QuestListCellID"];
+    
+    cell.textLabel.font = [UIFont fontWithName:@"Redressed" size:15];
     cell.textLabel.text = quest.questName;
+    
+    cell.detailTextLabel.font = [UIFont fontWithName:@"Redressed" size:15];
     cell.detailTextLabel.text = [NSString stringWithFormat:@"Quest Giver: %@",quest.questGiver];
     
     cell.imageView.layer.backgroundColor = [[UIColor clearColor] CGColor];
@@ -202,7 +209,39 @@
     }
     else if (sender.selectedSegmentIndex == 2)
     {
-        sender.tintColor = [UIColor greenColor];
+        PFQuery *query = [PFQuery queryWithClassName:@"CompleteQuest"];
+        [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error)
+        {
+            [[UIApplication sharedApplication] setNetworkActivityIndicatorVisible:YES];
+            
+            if (!error)
+            {
+                NSLog(@"complete objects successfully fetched");
+                for (PFObject *item in objects)
+                {
+                    Quest *quest = [Quest new];
+                    quest.questName = [item objectForKey:@"questName"];
+                    quest.questGiver = [item objectForKey:@"questGiver"];
+                    quest.questDescription = [item objectForKey:@"questDescription"];
+                    quest.locationLatitude = [[item objectForKey:@"locationLatitude"]floatValue];
+                    quest.locationLongitude = [[item objectForKey:@"locationLongitude"]floatValue];
+                    quest.questGiverLatitude = [[item objectForKey:@"questGiverLatitude"]floatValue];
+                    quest.questGiverLongitude = [[item objectForKey:@"questGiverLongitude"]floatValue];
+                    
+                    [quests addObject:quest];
+                }
+                
+                dispatch_async(dispatch_get_main_queue(), ^{
+                    [questTableView reloadData];
+                });
+            }
+            else
+            {
+                NSLog(@"segmented index 2 (complete) error: %@", [error userInfo]);
+            }
+            
+            [[UIApplication sharedApplication]setNetworkActivityIndicatorVisible:NO];
+        }];
     }
 }
 

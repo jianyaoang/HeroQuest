@@ -26,6 +26,7 @@
 		4171F8011928F31A00682E45 /* SignUpViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4171F8001928F31A00682E45 /* SignUpViewController.m */; };
 		41816EAE1921452D00768E03 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 41816EAD1921452D00768E03 /* MapKit.framework */; };
 		41816EB01921453800768E03 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 41816EAF1921453800768E03 /* CoreLocation.framework */; };
+		418CC9621931146A00DD2941 /* Redressed.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 418CC9611931142A00DD2941 /* Redressed.ttf */; };
 		41B46C9C191FF1990011D6CB /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 41B46C9B191FF1990011D6CB /* CoreData.framework */; };
 		41BB1960192A7B0C009D0E97 /* FacebookSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 41BB195F192A7B0C009D0E97 /* FacebookSDK.framework */; };
 		41C5FF5D191E9BCD00AB6772 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 41C5FF5C191E9BCD00AB6772 /* Foundation.framework */; };
@@ -79,6 +80,7 @@
 		4171F8001928F31A00682E45 /* SignUpViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SignUpViewController.m; sourceTree = "<group>"; };
 		41816EAD1921452D00768E03 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		41816EAF1921453800768E03 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		418CC9611931142A00DD2941 /* Redressed.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Redressed.ttf; sourceTree = "<group>"; };
 		41B46C9B191FF1990011D6CB /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		41BB195F192A7B0C009D0E97 /* FacebookSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FacebookSDK.framework; path = ../../../Documents/FacebookSDK/FacebookSDK.framework; sourceTree = "<group>"; };
 		41C5FF59191E9BCD00AB6772 /* HeroQuest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HeroQuest.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -159,6 +161,14 @@
 			name = ViewControllers;
 			sourceTree = "<group>";
 		};
+		418CC9601931141800DD2941 /* Font */ = {
+			isa = PBXGroup;
+			children = (
+				418CC9611931142A00DD2941 /* Redressed.ttf */,
+			);
+			name = Font;
+			sourceTree = "<group>";
+		};
 		41C5FF50191E9BCC00AB6772 = {
 			isa = PBXGroup;
 			children = (
@@ -216,6 +226,7 @@
 				412EAA9C191ECF7D00982F84 /* Quest.m */,
 				41C5FF74191E9BCD00AB6772 /* Images.xcassets */,
 				41C5FF63191E9BCD00AB6772 /* Supporting Files */,
+				418CC9601931141800DD2941 /* Font */,
 			);
 			path = HeroQuest;
 			sourceTree = "<group>";
@@ -327,6 +338,7 @@
 			files = (
 				41C5FF75191E9BCD00AB6772 /* Images.xcassets in Resources */,
 				41C5FF67191E9BCD00AB6772 /* InfoPlist.strings in Resources */,
+				418CC9621931146A00DD2941 /* Redressed.ttf in Resources */,
 				41C5FF70191E9BCD00AB6772 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
