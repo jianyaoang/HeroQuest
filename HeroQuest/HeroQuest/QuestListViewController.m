@@ -230,6 +230,17 @@
                 for (PFObject *item in objects)
                 {
                     Quest *quest = [Quest new];
+                    
+                    PFFile *questImageFile = item[@"questImage"];
+                    [questImageFile getDataInBackgroundWithBlock:^(NSData *data, NSError *error)
+                    {
+                        if (!error)
+                        {
+                            UIImage *questImage = [UIImage imageWithData:data];
+                            quest.questImage = questImage;
+                        }
+                    }];
+                    
                     quest.questName = [item objectForKey:@"questName"];
                     quest.questGiver = [item objectForKey:@"questGiver"];
                     quest.questDescription = [item objectForKey:@"questDescription"];
