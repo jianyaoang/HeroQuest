@@ -31,6 +31,11 @@
     questName.text = [NSString stringWithFormat:@"Quest Name: %@",self.quest.questName];
     questName.numberOfLines = 0;
     
+    questImage.layer.cornerRadius = questImage.frame.size.width/2;
+    questImage.layer.borderWidth = 2.0;
+    questImage.layer.borderColor = [[UIColor darkGrayColor]CGColor];
+    questImage.layer.masksToBounds = YES;
+    questImage.clipsToBounds = YES;
     questImage.image = self.quest.questImage;
     
     questGiver.text = [NSString stringWithFormat:@"Quest Giver: %@",self.quest.questGiver];
@@ -85,7 +90,14 @@
 
 -(MKAnnotationView*)mapView:(MKMapView *)mapView viewForAnnotation:(id<MKAnnotation>)annotation
 {
+    if (annotation != questGiverLocation)
+    {
+        return nil;
+    }
+    
     MKPinAnnotationView *pin = [[MKPinAnnotationView alloc] initWithAnnotation:annotation reuseIdentifier:nil];
+
+    pin.enabled = YES;
     pin.image = self.quest.questImage;
     pin.canShowCallout = YES;
     return pin;

@@ -80,7 +80,7 @@
     quest1.questGiver = @"HotDogg The Bounty Hunter";
     quest1.questDescription = @"The famed bounty hunter HotDog has requested the aid of a hero in ridding the woods of terrifying bandits who have thus far eluded his capture, as he is actually a dog, and cannot actually grab things more than 6 feet off the ground.";
     quest1.alignment = @"GOOD";
-    quest1.questImage = [UIImage imageNamed:@"cloudgate"];
+    quest1.questImage = [UIImage imageNamed:@"Bounty Hunter"];
     quest1.locationLatitude = 46.908588;
     quest1.locationLongitude = -96.808991;
     quest1.questGiverLatitude = 46.8541979;
@@ -139,6 +139,14 @@
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"QuestListCellID"];
     cell.textLabel.text = quest.questName;
     cell.detailTextLabel.text = [NSString stringWithFormat:@"Quest Giver: %@",quest.questGiver];
+    
+    cell.imageView.layer.backgroundColor = [[UIColor clearColor] CGColor];
+    cell.imageView.layer.cornerRadius = 20.0;
+    cell.imageView.layer.borderWidth = 2.0;
+    cell.imageView.layer.masksToBounds = YES;
+    cell.imageView.clipsToBounds = YES;
+    cell.imageView.layer.borderColor = [[UIColor darkGrayColor]CGColor];
+    
     cell.imageView.image = quest.questImage;
     
     return cell;
