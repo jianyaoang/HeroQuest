@@ -30,6 +30,10 @@
     passwordTextField.delegate = self;
     nameTextField.delegate     = self;
     
+    self.navigationController.navigationBar.titleTextAttributes = @{NSFontAttributeName: [UIFont fontWithName:@"Redressed" size:20]};
+    [[UIBarButtonItem appearance] setTitleTextAttributes:@{NSFontAttributeName: [UIFont fontWithName:@"Redressed" size:20]} forState:UIControlStateNormal];
+    
+    
     usernameTextField.font = [UIFont fontWithName:@"Redressed" size:20];
     passwordTextField.font = [UIFont fontWithName:@"Redressed" size:20];
     nameTextField.font = [UIFont fontWithName:@"Redressed" size:20];
@@ -42,7 +46,12 @@
     [alignmentSegmentedControl setTitleTextAttributes:attributes forState:UIControlStateNormal];
     
     signUpButton.titleLabel.font = [UIFont fontWithName:@"Redressed" size:20];
+}
 
+-(void)viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:animated];
+    [self.navigationController setNavigationBarHidden:NO];
 }
 
 - (IBAction)onSignUpButtonPressed:(UIButton*)sender
@@ -97,8 +106,11 @@
 
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
-    QuestListViewController *qlvc = segue.destinationViewController;
-    qlvc.navigationItem.title = @"Quest List";
+    if ([segue.identifier isEqualToString:@"showQuestList"])
+    {
+        QuestListViewController *qlvc = segue.destinationViewController;
+        qlvc.navigationItem.title = @"Quest List";
+    }
 }
 
 

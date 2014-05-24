@@ -8,6 +8,7 @@
 
 #import "LoginViewController.h"
 #import "QuestListViewController.h"
+#import "SignUpViewController.h"
 #import <Parse/Parse.h>
 @interface LoginViewController () <UITextFieldDelegate>
 {
@@ -37,12 +38,17 @@
     
     usernameTextField.delegate = self;
     passwordTextField.delegate = self;
-    [self.navigationController setNavigationBarHidden:YES];
     
     if ([PFUser currentUser] || [PFFacebookUtils isLinkedWithUser:[PFUser currentUser]])
     {
         [self performSegueWithIdentifier:@"showQuestList" sender:self];
     }
+}
+
+-(void)viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:animated];
+    [self.navigationController setNavigationBarHidden:YES];
 }
 
 - (IBAction)onLoginButtonPressed:(UIButton*)sender
@@ -150,8 +156,12 @@
     if ([segue.identifier isEqualToString:@"showQuestList"])
     {
         QuestListViewController *qlvc = segue.destinationViewController;
-//        qlvc.managedObjectContext = self.managedObjectContext;
         qlvc.navigationItem.title = @"Quest List";
+    }
+    else if ([segue.identifier isEqualToString:@"showSignUpView"])
+    {
+        SignUpViewController *suvc = segue.destinationViewController;
+        suvc.navigationItem.title = @"Sign Up";
     }
 }
 

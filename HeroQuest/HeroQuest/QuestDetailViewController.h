@@ -15,7 +15,6 @@
 
 @property (strong, nonatomic) Quest *quest;
 @property CFIndex index;
-
 @property QuestListViewController *qlvc;
 
 @end
