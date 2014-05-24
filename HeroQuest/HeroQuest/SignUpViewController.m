@@ -26,26 +26,42 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    usernameTextField.delegate = self;
-    passwordTextField.delegate = self;
-    nameTextField.delegate     = self;
     
+    UIImageView *backgroundImage = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"heroquestbackground"]];
+    [self.view addSubview:backgroundImage];
+    [self.view sendSubviewToBack:backgroundImage];
+
     self.navigationController.navigationBar.titleTextAttributes = @{NSFontAttributeName: [UIFont fontWithName:@"Redressed" size:20]};
     [[UIBarButtonItem appearance] setTitleTextAttributes:@{NSFontAttributeName: [UIFont fontWithName:@"Redressed" size:20]} forState:UIControlStateNormal];
     
     
     usernameTextField.font = [UIFont fontWithName:@"Redressed" size:20];
+    usernameTextField.backgroundColor = [UIColor colorWithRed:0.84 green:0.84 blue:0.84 alpha:0.8];
+    
     passwordTextField.font = [UIFont fontWithName:@"Redressed" size:20];
+    passwordTextField.backgroundColor = [UIColor colorWithRed:0.84 green:0.84 blue:0.84 alpha:0.8];
+    
     nameTextField.font = [UIFont fontWithName:@"Redressed" size:20];
+    nameTextField.backgroundColor = [UIColor colorWithRed:0.84 green:0.84 blue:0.84 alpha:0.8];
     
     NSDictionary *attributes = @{NSFontAttributeName: [UIFont fontWithName:@"Redressed" size:20]};
+
+    signUpButton.titleLabel.font = [UIFont fontWithName:@"Redressed" size:30];
+    signUpButton.backgroundColor = [UIColor colorWithRed:0.21 green:0.21 blue:0.21 alpha:0.8];
+    [signUpButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+    
+    [alignmentSegmentedControl setTitleTextAttributes:attributes forState:UIControlStateNormal];
+    [alignmentSegmentedControl setBackgroundColor:[UIColor darkGrayColor]];
+    [alignmentSegmentedControl setTintColor:[UIColor whiteColor]];
+    
+    usernameTextField.delegate = self;
+    passwordTextField.delegate = self;
+    nameTextField.delegate     = self;
     
     [alignmentSegmentedControl setTitle:@"GOOD" forSegmentAtIndex:0];
     [alignmentSegmentedControl setTitle:@"NEUTRAL" forSegmentAtIndex:1];
     [alignmentSegmentedControl setTitle:@"EVIL" forSegmentAtIndex:2];
-    [alignmentSegmentedControl setTitleTextAttributes:attributes forState:UIControlStateNormal];
-    
-    signUpButton.titleLabel.font = [UIFont fontWithName:@"Redressed" size:20];
+
 }
 
 -(void)viewWillAppear:(BOOL)animated

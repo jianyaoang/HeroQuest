@@ -48,15 +48,19 @@
     loginButton.titleLabel.font = [UIFont fontWithName:@"Redressed" size:30];
     [loginButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
     loginButton.backgroundColor = [UIColor colorWithRed:0.21 green:0.21 blue:0.21 alpha:0.8];
+    loginButton.layer.cornerRadius = 30;
+
     
     signUpButton.titleLabel.font = [UIFont fontWithName:@"Redressed" size:30];
     [signUpButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
     signUpButton.backgroundColor = [UIColor colorWithRed:0.21 green:0.21 blue:0.21 alpha:0.8];
+    signUpButton.layer.cornerRadius = 30;
 
     
     FacebookSignUpButton.titleLabel.font = [UIFont fontWithName:@"Redressed" size:30];
     [FacebookSignUpButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
     FacebookSignUpButton.backgroundColor = [UIColor colorWithRed:0.21 green:0.21 blue:0.21 alpha:0.8];
+    FacebookSignUpButton.layer.cornerRadius = 30;
 
     
     usernameTextField.delegate = self;
