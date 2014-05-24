@@ -83,6 +83,15 @@
     }];
 }
 
+
+-(MKAnnotationView*)mapView:(MKMapView *)mapView viewForAnnotation:(id<MKAnnotation>)annotation
+{
+    MKPinAnnotationView *pin = [[MKPinAnnotationView alloc] initWithAnnotation:annotation reuseIdentifier:nil];
+    pin.image = self.quest.questImage;
+    pin.canShowCallout = YES;
+    return pin;
+}
+
 - (IBAction)onAcceptBarButtonPressed:(UIBarButtonItem*)sender
 {
     [sender setTitle:@"Complete"];
