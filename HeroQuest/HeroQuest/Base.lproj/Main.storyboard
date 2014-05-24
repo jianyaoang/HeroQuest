@@ -35,7 +35,7 @@
                                 </connections>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="i5S-jR-vfy">
-                                <rect key="frame" x="80" y="244" width="160" height="30"/>
+                                <rect key="frame" x="48" y="244" width="224" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Login">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
@@ -45,7 +45,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dP4-U0-la0">
-                                <rect key="frame" x="80" y="282" width="160" height="30"/>
+                                <rect key="frame" x="48" y="282" width="224" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Sign Up">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
@@ -55,7 +55,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3UE-Oc-GF0">
-                                <rect key="frame" x="80" y="320" width="160" height="30"/>
+                                <rect key="frame" x="48" y="320" width="224" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Facebook Sign Up">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
@@ -64,12 +64,20 @@
                                     <action selector="onFacebookSignUpButtonPressed:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="X43-h5-eRN"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fFN-xx-7KQ">
+                                <rect key="frame" x="25" y="67" width="270" height="54"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" id="ckQ-fe-5bz"/>
                     <connections>
                         <outlet property="FacebookSignUpButton" destination="3UE-Oc-GF0" id="qho-bX-LfX"/>
+                        <outlet property="heroQuestLogo" destination="fFN-xx-7KQ" id="iYj-EE-rTG"/>
                         <outlet property="loginButton" destination="i5S-jR-vfy" id="ucK-b4-Ac3"/>
                         <outlet property="passwordTextField" destination="ln4-oo-z4P" id="adC-wX-zs5"/>
                         <outlet property="signUpButton" destination="dP4-U0-la0" id="bKB-GT-Ik2"/>

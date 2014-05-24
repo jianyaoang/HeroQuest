@@ -10,9 +10,10 @@
 #import "QuestListViewController.h"
 #import "SignUpViewController.h"
 #import <Parse/Parse.h>
+
 @interface LoginViewController () <UITextFieldDelegate>
 {
-    IBOutlet UISwitch *rememberMeSwitch;
+    IBOutlet UILabel *heroQuestLogo;
     IBOutlet UIButton *loginButton;
     IBOutlet UIButton *signUpButton;
     IBOutlet UIButton *FacebookSignUpButton;
@@ -27,14 +28,36 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    UIImageView *backgroundImage = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"heroquestbackground"]];
+    backgroundImage.alpha = 0.9;
+    [self.view addSubview:backgroundImage];
+    [self.view sendSubviewToBack:backgroundImage];
+    
+    heroQuestLogo.text = @"Hero Quest";
+    heroQuestLogo.font = [UIFont fontWithName:@"Redressed" size:60];
+    heroQuestLogo.textColor = [UIColor whiteColor];
+    
     [PFFacebookUtils initializeFacebook];
     
     usernameTextField.font = [UIFont fontWithName:@"Redressed" size:20];
-    passwordTextField.font = [UIFont fontWithName:@"Redressed" size:20];
+    usernameTextField.backgroundColor = [UIColor colorWithRed:0.84 green:0.84 blue:0.84 alpha:0.8];
     
-    loginButton.titleLabel.font = [UIFont fontWithName:@"Redressed" size:20];
-    signUpButton.titleLabel.font = [UIFont fontWithName:@"Redressed" size:20];
-    FacebookSignUpButton.titleLabel.font = [UIFont fontWithName:@"Redressed" size:20];
+    passwordTextField.font = [UIFont fontWithName:@"Redressed" size:20];
+    passwordTextField.backgroundColor = [UIColor colorWithRed:0.84 green:0.84 blue:0.84 alpha:0.8];
+    
+    loginButton.titleLabel.font = [UIFont fontWithName:@"Redressed" size:30];
+    [loginButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+    loginButton.backgroundColor = [UIColor colorWithRed:0.21 green:0.21 blue:0.21 alpha:0.8];
+    
+    signUpButton.titleLabel.font = [UIFont fontWithName:@"Redressed" size:30];
+    [signUpButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+    signUpButton.backgroundColor = [UIColor colorWithRed:0.21 green:0.21 blue:0.21 alpha:0.8];
+
+    
+    FacebookSignUpButton.titleLabel.font = [UIFont fontWithName:@"Redressed" size:30];
+    [FacebookSignUpButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+    FacebookSignUpButton.backgroundColor = [UIColor colorWithRed:0.21 green:0.21 blue:0.21 alpha:0.8];
+
     
     usernameTextField.delegate = self;
     passwordTextField.delegate = self;
