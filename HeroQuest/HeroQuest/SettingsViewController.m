@@ -21,7 +21,9 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    
+        
+    NSDictionary *attributes = @{NSFontAttributeName: [UIFont fontWithName:@"Redressed" size:15]};
+    [questSegmentedControl setTitleTextAttributes:attributes forState:UIControlStateNormal];
 }
 
 - (IBAction)onQuestSegmentedControlPressed:(id)sender

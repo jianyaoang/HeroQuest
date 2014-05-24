@@ -30,6 +30,7 @@
     
     questName.text = [NSString stringWithFormat:@"Quest Name: %@",self.quest.questName];
     questName.numberOfLines = 0;
+    questName.font = [UIFont fontWithName:@"Redressed" size:15];
     
     questImage.layer.cornerRadius = questImage.frame.size.width/2;
     questImage.layer.borderWidth = 2.0;
@@ -40,8 +41,10 @@
     
     questGiver.text = [NSString stringWithFormat:@"Quest Giver: %@",self.quest.questGiver];
     questGiver.numberOfLines = 0;
+    questGiver.font = [UIFont fontWithName:@"Redressed" size:15];
     
     questDescription.text = self.quest.questDescription;
+    questDescription.font = [UIFont fontWithName:@"Redressed" size:15];
     
     [self displayingQuestLocationAndQuestGiverOnMap];
 }
