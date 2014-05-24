@@ -110,6 +110,9 @@
     {
         [sender setTitle:@"Complete"];
         
+        NSData *imageData = UIImagePNGRepresentation(self.quest.questImage);
+        PFFile *questImageFile = [PFFile fileWithName:@"questImageFiled" data:imageData];
+        
         PFObject *acceptedQuest = [PFObject objectWithClassName:@"AcceptedQuest"];
         acceptedQuest[@"questName"] = self.quest.questName;
         acceptedQuest[@"questGiver"] = self.quest.questGiver;
@@ -118,6 +121,7 @@
         acceptedQuest[@"locationLongitude"] = [NSNumber numberWithFloat:self.quest.locationLongitude];
         acceptedQuest[@"questGiverLatitude"] = [NSNumber numberWithFloat:self.quest.questGiverLatitude];
         acceptedQuest[@"questGiverLongitude"] = [NSNumber numberWithFloat:self.quest.questGiverLongitude];
+        acceptedQuest[@"questImage"] = questImageFile;
         
         [acceptedQuest saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error)
          {
@@ -136,6 +140,9 @@
     }
     else if ([sender.title isEqualToString:@"Complete"])
     {
+        NSData *imageData = UIImagePNGRepresentation(self.quest.questImage);
+        PFFile *questImageFile = [PFFile fileWithName:@"questImageFiled" data:imageData];
+        
         PFObject *completeQuest = [PFObject objectWithClassName:@"CompleteQuest"];
         completeQuest[@"questName"] = self.quest.questName;
         completeQuest[@"questGiver"] = self.quest.questGiver;
@@ -144,6 +151,7 @@
         completeQuest[@"locationLongitude"] = [NSNumber numberWithFloat:self.quest.locationLongitude];
         completeQuest[@"questGiverLatitude"] = [NSNumber numberWithFloat:self.quest.questGiverLatitude];
         completeQuest[@"questGiverLongitude"] = [NSNumber numberWithFloat:self.quest.questGiverLongitude];
+        completeQuest[@"questImage"] = questImageFile;
         
         [completeQuest saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error)
         {
