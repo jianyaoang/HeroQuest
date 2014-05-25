@@ -87,7 +87,7 @@
     quest1.questGiver = @"HotDogg The Bounty Hunter";
     quest1.questDescription = @"The famed bounty hunter HotDog has requested the aid of a hero in ridding the woods of terrifying bandits who have thus far eluded his capture, as he is actually a dog, and cannot actually grab things more than 6 feet off the ground.";
     quest1.alignment = @"GOOD";
-    quest1.questImage = [UIImage imageNamed:@"Bounty Hunter"];
+    quest1.questImage = [UIImage imageNamed:@"Good"];
     quest1.locationLatitude = 46.908588;
     quest1.locationLongitude = -96.808991;
     quest1.questGiverLatitude = 46.8541979;
@@ -98,7 +98,7 @@
     quest2.questGiver = @"Sir Jimmy The Swift";
     quest2.questDescription = @"Sir Jimmy was once the fastest man in the kingdom, brave as any soldier and wise as a king. Unfortunately, age catches us all in the end, and he has requested that I, his personal scribe, find a hero to deliver a package of particular importance--and protect it with their life.";
     quest2.alignment = @"NEUTRAL";
-    quest2.questImage = [UIImage imageNamed:@"cloudgate"];
+    quest2.questImage = [UIImage imageNamed:@"Neutral"];
     quest2.locationLatitude = 46.8657639;
     quest2.locationLongitude = -96.7363173;
     quest2.questGiverLatitude = 46.8739748;
@@ -109,7 +109,7 @@
     quest3.questGiver = @"Prince Jack, The Iron Horse";
     quest3.questDescription = @"That strange dog that everyone is treating like a bounty-hunter must go. By the order of Prince Jack, that smelly, disease ridden mongrel must be removed from our streets by any means necessary. He is disrupting the lives of ordinary citizens, and it's just really weird. Make it gone.";
     quest3.alignment = @"EVIL";
-    quest3.questImage = [UIImage imageNamed:@"cloudgate"];
+    quest3.questImage = [UIImage imageNamed:@"Evil"];
     quest3.locationLatitude = 46.892386;
     quest3.locationLongitude = -96.799669;
     quest3.questGiverLatitude = 46.8739748;
@@ -152,7 +152,7 @@
     cell.detailTextLabel.text = [NSString stringWithFormat:@"Quest Giver: %@",quest.questGiver];
     
     cell.imageView.layer.backgroundColor = [[UIColor clearColor] CGColor];
-    cell.imageView.layer.cornerRadius = 20.0;
+    cell.imageView.layer.cornerRadius = 30.0;
     cell.imageView.layer.borderWidth = 2.0;
     cell.imageView.layer.masksToBounds = YES;
     cell.imageView.clipsToBounds = YES;
@@ -162,6 +162,7 @@
     
     return cell;
 }
+
 
 - (IBAction)onQuestMenuPressed:(UISegmentedControl*)sender
 {
